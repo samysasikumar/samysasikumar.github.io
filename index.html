@@ -9,10 +9,8 @@
     :root {
       --bg: #050d12;
       --surface: #0a1a22;
-      --surface2: #0f2233;
       --accent: #00e5ff;
       --accent2: #00ff9d;
-      --accent3: #7b61ff;
       --text: #d6eaf0;
       --muted: #5a7a88;
       --border: rgba(0, 229, 255, 0.12);
@@ -20,7 +18,6 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -30,7 +27,6 @@
       overflow-x: hidden;
     }
 
-    /* Grid background */
     body::before {
       content: '';
       position: fixed;
@@ -43,7 +39,6 @@
       z-index: 0;
     }
 
-    /* Glow orbs */
     .orb {
       position: fixed;
       border-radius: 50%;
@@ -51,18 +46,9 @@
       pointer-events: none;
       z-index: 0;
     }
-    .orb-1 {
-      width: 500px; height: 500px;
-      background: rgba(0, 229, 255, 0.06);
-      top: -100px; left: -100px;
-    }
-    .orb-2 {
-      width: 400px; height: 400px;
-      background: rgba(0, 255, 157, 0.05);
-      bottom: 200px; right: -100px;
-    }
+    .orb-1 { width: 500px; height: 500px; background: rgba(0,229,255,0.06); top: -100px; left: -100px; }
+    .orb-2 { width: 400px; height: 400px; background: rgba(0,255,157,0.05); bottom: 200px; right: -100px; }
 
-    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -75,32 +61,11 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-
-    .nav-logo {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.9rem;
-      color: var(--accent);
-      letter-spacing: 0.05em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      transition: color 0.2s;
-    }
-
+    .nav-logo { font-family: 'Space Mono', monospace; font-size: 0.9rem; color: var(--accent); letter-spacing: 0.05em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; transition: color 0.2s; }
     .nav-links a:hover { color: var(--accent); }
 
-    /* HERO */
     .hero {
       position: relative;
       z-index: 1;
@@ -125,13 +90,7 @@
       gap: 0.75rem;
       animation: fadeUp 0.6s ease both;
     }
-
-    .hero-tag::before {
-      content: '';
-      display: inline-block;
-      width: 32px; height: 1px;
-      background: var(--accent2);
-    }
+    .hero-tag::before { content: ''; display: inline-block; width: 32px; height: 1px; background: var(--accent2); }
 
     .hero h1 {
       font-family: 'Space Mono', monospace;
@@ -142,7 +101,6 @@
       margin-bottom: 1.5rem;
       animation: fadeUp 0.6s 0.1s ease both;
     }
-
     .hero h1 span {
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       -webkit-background-clip: text;
@@ -166,7 +124,6 @@
       margin-bottom: 3rem;
       animation: fadeUp 0.6s 0.3s ease both;
     }
-
     .badge {
       font-family: 'Space Mono', monospace;
       font-size: 0.7rem;
@@ -178,12 +135,7 @@
       letter-spacing: 0.05em;
     }
 
-    .hero-cta {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      animation: fadeUp 0.6s 0.4s ease both;
-    }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.6s 0.4s ease both; }
 
     .btn {
       font-family: 'Space Mono', monospace;
@@ -196,37 +148,12 @@
       cursor: pointer;
       border: none;
     }
+    .btn-primary { background: var(--accent); color: var(--bg); font-weight: 700; }
+    .btn-primary:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,229,255,0.3); }
+    .btn-outline { background: transparent; color: var(--accent); border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--accent); background: rgba(0,229,255,0.05); transform: translateY(-2px); }
 
-    .btn-primary {
-      background: var(--accent);
-      color: var(--bg);
-      font-weight: 700;
-    }
-    .btn-primary:hover {
-      background: var(--accent2);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0, 229, 255, 0.3);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--accent);
-      border: 1px solid var(--border);
-    }
-    .btn-outline:hover {
-      border-color: var(--accent);
-      background: rgba(0, 229, 255, 0.05);
-      transform: translateY(-2px);
-    }
-
-    /* SECTIONS */
-    section {
-      position: relative;
-      z-index: 1;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 5rem 3rem;
-    }
+    section { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 5rem 3rem; }
 
     .section-label {
       font-family: 'Space Mono', monospace;
@@ -239,15 +166,7 @@
       align-items: center;
       gap: 0.75rem;
     }
-
-    .section-label::after {
-      content: '';
-      flex: 1;
-      max-width: 60px;
-      height: 1px;
-      background: var(--accent);
-      opacity: 0.4;
-    }
+    .section-label::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--accent); opacity: 0.4; }
 
     .section-title {
       font-family: 'Space Mono', monospace;
@@ -257,12 +176,7 @@
       color: var(--text);
     }
 
-    /* PROJECTS GRID */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
 
     .project-card {
       background: var(--surface);
@@ -273,7 +187,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .project-card::before {
       content: '';
       position: absolute;
@@ -283,149 +196,40 @@
       opacity: 0;
       transition: opacity 0.3s;
     }
-
-    .project-card:hover {
-      border-color: rgba(0, 229, 255, 0.3);
-      transform: translateY(-4px);
-      box-shadow: var(--glow);
-    }
-
+    .project-card:hover { border-color: rgba(0,229,255,0.3); transform: translateY(-4px); box-shadow: var(--glow); }
     .project-card:hover::before { opacity: 1; }
 
-    .project-num {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--accent);
-      letter-spacing: 0.15em;
-      margin-bottom: 1.25rem;
-      opacity: 0.6;
-    }
-
-    .project-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .project-title {
-      font-family: 'Space Mono', monospace;
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      color: var(--text);
-    }
-
-    .project-desc {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
+    .project-num { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--accent); letter-spacing: 0.15em; margin-bottom: 1.25rem; opacity: 0.6; }
+    .project-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .project-title { font-family: 'Space Mono', monospace; font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text); }
+    .project-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
     .tag {
       font-family: 'Space Mono', monospace;
       font-size: 0.65rem;
       padding: 0.3rem 0.7rem;
-      background: rgba(0, 229, 255, 0.07);
-      border: 1px solid rgba(0, 229, 255, 0.15);
+      background: rgba(0,229,255,0.07);
+      border: 1px solid rgba(0,229,255,0.15);
       border-radius: 4px;
       color: var(--accent);
       letter-spacing: 0.05em;
     }
-
-    .project-link {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--accent2);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: gap 0.2s;
-    }
-
+    .project-link { font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--accent2); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.2s; }
     .project-link:hover { gap: 0.7rem; }
 
-    /* SKILLS */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .skill-block { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; transition: all 0.3s; }
+    .skill-block:hover { border-color: rgba(0,229,255,0.25); box-shadow: var(--glow); }
+    .skill-label { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 0.75rem; text-transform: uppercase; }
+    .skill-items { display: flex; flex-direction: column; gap: 0.4rem; }
+    .skill-item { font-size: 0.85rem; color: var(--muted); }
 
-    .skill-block {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.5rem;
-      transition: all 0.3s;
-    }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .about-text p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+    .about-text p strong { color: var(--text); font-weight: 600; }
 
-    .skill-block:hover {
-      border-color: rgba(0, 229, 255, 0.25);
-      box-shadow: var(--glow);
-    }
-
-    .skill-label {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--accent);
-      letter-spacing: 0.1em;
-      margin-bottom: 0.75rem;
-      text-transform: uppercase;
-    }
-
-    .skill-items {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .skill-item {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    /* ABOUT */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    .about-text p {
-      font-size: 0.95rem;
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 1rem;
-    }
-
-    .about-text p strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .stat-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.5rem;
-      text-align: center;
-    }
-
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; text-align: center; }
     .stat-number {
       font-family: 'Space Mono', monospace;
       font-size: 1.8rem;
@@ -436,13 +240,8 @@
       background-clip: text;
       margin-bottom: 0.3rem;
     }
+    .stat-label { font-size: 0.78rem; color: var(--muted); }
 
-    .stat-label {
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    /* CONTACT */
     .contact-box {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -452,27 +251,9 @@
       position: relative;
       overflow: hidden;
     }
-
-    .contact-box::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(0,229,255,0.04), rgba(0,255,157,0.04));
-      pointer-events: none;
-    }
-
-    .contact-box h3 {
-      font-family: 'Space Mono', monospace;
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .contact-box p {
-      color: var(--muted);
-      margin-bottom: 2rem;
-      font-size: 0.9rem;
-    }
-
+    .contact-box::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,229,255,0.04), rgba(0,255,157,0.04)); pointer-events: none; }
+    .contact-box h3 { font-family: 'Space Mono', monospace; font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .contact-box p { color: var(--muted); margin-bottom: 2rem; font-size: 0.9rem; }
     .contact-email {
       font-family: 'Space Mono', monospace;
       font-size: 0.85rem;
@@ -484,57 +265,16 @@
       display: inline-block;
       transition: all 0.25s;
     }
+    .contact-email:hover { border-color: var(--accent); background: rgba(0,229,255,0.05); }
 
-    .contact-email:hover {
-      border-color: var(--accent);
-      background: rgba(0, 229, 255, 0.05);
-    }
+    footer { position: relative; z-index: 1; text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); }
+    footer a { color: var(--accent); text-decoration: none; }
 
-    /* FOOTER */
-    footer {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid var(--border);
-      font-family: 'Space Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--muted);
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Cursor dot */
-    .cursor {
-      display: inline-block;
-      width: 3px;
-      animation: blink 1s step-end infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .cursor { display: inline-block; animation: blink 1s step-end infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
@@ -566,14 +306,14 @@
     <h1>Samy<br/><span>Sasikumar</span></h1>
     <p class="hero-desc">
       Aspiring CS major building real-world projects at 14 —
-      from data science & regression models to web apps and game design.
+      from web apps and game design to running a real business.
     </p>
     <div class="hero-badges">
       <span class="badge">UW Teens · Python</span>
       <span class="badge">AP CSP</span>
       <span class="badge">GitHub</span>
-      <span class="badge">Data Science</span>
       <span class="badge">Web Dev</span>
+      <span class="badge">Game Design</span>
     </div>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View Projects →</a>
@@ -588,24 +328,7 @@
     <div class="projects-grid">
 
       <div class="project-card reveal">
-        <div class="project-num">01 / DATA SCIENCE</div>
-        <div class="project-icon">✈️</div>
-        <div class="project-title">US Domestic Travel Analysis</div>
-        <p class="project-desc">
-          Analyzed domestic travel patterns between Washington and Hawaii using data from 2019–2025.
-          Applied simple linear regression to project future travel trends.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Linear Regression</span>
-          <span class="tag">Data Visualization</span>
-          <span class="tag">Pandas</span>
-        </div>
-        <a href="https://github.com/samysasikumar" target="_blank" class="project-link">View on GitHub →</a>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-num">02 / WEB DEVELOPMENT</div>
+        <div class="project-num">01 / WEB DEVELOPMENT</div>
         <div class="project-icon">🧶</div>
         <div class="project-title">Samy's Crochet — Business Site</div>
         <p class="project-desc">
@@ -622,11 +345,11 @@
       </div>
 
       <div class="project-card reveal">
-        <div class="project-num">03 / GAME DESIGN</div>
+        <div class="project-num">02 / GAME DESIGN</div>
         <div class="project-icon">🎮</div>
         <div class="project-title">Text-Based Game</div>
         <p class="project-desc">
-          Designed and built a text-based interactive game in Python, applying logic, 
+          Designed and built a text-based interactive game in Python, applying logic,
           conditionals, and game state management learned through UW Teens coursework.
         </p>
         <div class="project-tags">
@@ -651,14 +374,6 @@
           <span class="skill-item">Python</span>
           <span class="skill-item">HTML & CSS</span>
           <span class="skill-item">Java (learning)</span>
-        </div>
-      </div>
-      <div class="skill-block reveal">
-        <div class="skill-label">Data Science</div>
-        <div class="skill-items">
-          <span class="skill-item">Linear Regression</span>
-          <span class="skill-item">Data Analysis</span>
-          <span class="skill-item">Data Visualization</span>
         </div>
       </div>
       <div class="skill-block reveal">
@@ -697,7 +412,7 @@
         </p>
         <p>
           I launched a <strong>real business</strong> (Samy's Crochet 🧶), built a live website for it,
-          analyzed travel datasets with regression models, and designed a game — all in 9th grade.
+          and designed a text-based game — all in 9th grade.
         </p>
         <p>
           My 4-year plan includes <strong>AP CSA, AP Calculus, AP Statistics</strong>, and
@@ -710,7 +425,7 @@
           <div class="stat-label">Grade · RMS LWSD</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">3+</div>
+          <div class="stat-number">2+</div>
           <div class="stat-label">Projects Shipped</div>
         </div>
         <div class="stat-card">
@@ -737,11 +452,10 @@
   </section>
 
   <footer>
-    <p>Built by <a href="https://github.com/samysasikumar">Samy Sasikumar</a> · 2025 · Redmond, WA</p>
+    <p>Built by <a href="https://github.com/samysasikumar">Samy Sasikumar</a> · 2026 · Redmond, WA</p>
   </footer>
 
   <script>
-    // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
