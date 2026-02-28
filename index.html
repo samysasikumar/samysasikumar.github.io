@@ -588,7 +588,24 @@
     <div class="projects-grid">
 
       <div class="project-card reveal">
-        <div class="project-num">01 / WEB DEVELOPMENT</div>
+        <div class="project-num">01 / DATA SCIENCE</div>
+        <div class="project-icon">✈️</div>
+        <div class="project-title">US Domestic Travel Analysis</div>
+        <p class="project-desc">
+          Analyzed domestic travel patterns between Washington and Hawaii using data from 2019–2025.
+          Applied simple linear regression to project future travel trends.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Linear Regression</span>
+          <span class="tag">Data Visualization</span>
+          <span class="tag">Pandas</span>
+        </div>
+        <a href="https://github.com/samysasikumar" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-num">02 / WEB DEVELOPMENT</div>
         <div class="project-icon">🧶</div>
         <div class="project-title">Samy's Crochet — Business Site</div>
         <p class="project-desc">
@@ -605,7 +622,7 @@
       </div>
 
       <div class="project-card reveal">
-        <div class="project-num">02 / GAME DESIGN</div>
+        <div class="project-num">03 / GAME DESIGN</div>
         <div class="project-icon">🎮</div>
         <div class="project-title">Text-Based Game</div>
         <p class="project-desc">
@@ -636,7 +653,14 @@
           <span class="skill-item">Java (learning)</span>
         </div>
       </div>
-
+      <div class="skill-block reveal">
+        <div class="skill-label">Data Science</div>
+        <div class="skill-items">
+          <span class="skill-item">Linear Regression</span>
+          <span class="skill-item">Data Analysis</span>
+          <span class="skill-item">Data Visualization</span>
+        </div>
+      </div>
       <div class="skill-block reveal">
         <div class="skill-label">Tools</div>
         <div class="skill-items">
@@ -673,7 +697,7 @@
         </p>
         <p>
           I launched a <strong>real business</strong> (Samy's Crochet 🧶), built a live website for it,
-          and designed a text-based game — all in 9th grade.
+          analyzed travel datasets with regression models, and designed a game — all in 9th grade.
         </p>
         <p>
           My 4-year plan includes <strong>AP CSA, AP Calculus, AP Statistics</strong>, and
@@ -686,7 +710,7 @@
           <div class="stat-label">Grade · RMS LWSD</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">2+</div>
+          <div class="stat-number">3+</div>
           <div class="stat-label">Projects Shipped</div>
         </div>
         <div class="stat-card">
@@ -706,8 +730,8 @@
     <div class="contact-box reveal">
       <h3>Let's Connect</h3>
       <p>Open to collaboration, mentorship, and interesting projects.</p>
-      <a href="/cdn-cgi/l/email-protection#b1c2d0dcc8c4dac5d9d09fc2c4dfc2d9d8dfd4f1d6dcd0d8dd9fd2dedc" class="contact-email">
-        <span class="__cf_email__" data-cfemail="a4d7c5c9ddd1cfd0ccc58ad7d1cad7cccdcac1e4c3c9c5cdc88ac7cbc9">[email&#160;protected]</span>
+      <a href="mailto:samyuktha.sunshine@gmail.com" class="contact-email">
+        samyuktha.sunshine@gmail.com
       </a>
     </div>
   </section>
@@ -716,8 +740,18 @@
     <p>Built by <a href="https://github.com/samysasikumar">Samy Sasikumar</a> · 2025 · Redmond, WA</p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
-      entries.
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
