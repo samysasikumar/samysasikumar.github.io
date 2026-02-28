@@ -33,7 +33,6 @@
       overflow-x: hidden;
     }
 
-    /* Soft gradient blobs */
     .blob {
       position: fixed;
       border-radius: 50%;
@@ -46,7 +45,6 @@
     .blob-2 { width: 500px; height: 500px; background: #db2777; bottom: -100px; right: -100px; }
     .blob-3 { width: 350px; height: 350px; background: #f97316; top: 40%; left: 50%; transform: translate(-50%,-50%); opacity: 0.15; }
 
-    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -81,7 +79,6 @@
     }
     .nav-links a:hover { color: var(--text); }
 
-    /* HERO */
     .hero {
       position: relative;
       z-index: 1;
@@ -106,10 +103,7 @@
       gap: 0.75rem;
       animation: fadeUp 0.6s ease both;
     }
-    .hero-tag::before {
-      content: '✦';
-      font-size: 0.6rem;
-    }
+    .hero-tag::before { content: '✦'; font-size: 0.6rem; }
 
     .hero h1 {
       font-family: 'Playfair Display', serif;
@@ -186,17 +180,18 @@
       transition: all 0.25s;
       cursor: pointer;
       border: none;
+      position: relative;
+      z-index: 2;
     }
     .btn-primary {
       background: linear-gradient(135deg, var(--pink), var(--purple));
       color: white;
       font-weight: 500;
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(192, 132, 252, 0.4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(192,132,252,0.4); }
     .btn-outline { background: transparent; color: var(--lavender); border: 1px solid var(--border2); }
     .btn-outline:hover { border-color: var(--purple); background: rgba(192,132,252,0.1); transform: translateY(-2px); }
 
-    /* SECTIONS */
     section {
       position: relative;
       z-index: 1;
@@ -234,11 +229,7 @@
       margin-bottom: 3rem;
       letter-spacing: -0.01em;
     }
-
-    .section-title em {
-      font-style: italic;
-      color: var(--purple);
-    }
+    .section-title em { font-style: italic; color: var(--purple); }
 
     /* PROJECTS */
     .projects-grid {
@@ -265,12 +256,13 @@
       background: linear-gradient(135deg, rgba(192,132,252,0.08), rgba(255,110,180,0.08));
       opacity: 0;
       transition: opacity 0.3s;
+      pointer-events: none;
     }
 
     .project-card:hover {
       border-color: rgba(192,132,252,0.35);
       transform: translateY(-5px);
-      box-shadow: 0 20px 50px rgba(124, 58, 237, 0.2);
+      box-shadow: 0 20px 50px rgba(124,58,237,0.2);
     }
     .project-card:hover::before { opacity: 1; }
 
@@ -281,9 +273,16 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 2;
     }
 
-    .project-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+    .project-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 2;
+    }
 
     .project-title {
       font-family: 'Playfair Display', serif;
@@ -291,6 +290,8 @@
       font-weight: 700;
       margin-bottom: 0.75rem;
       color: var(--text);
+      position: relative;
+      z-index: 2;
     }
 
     .project-desc {
@@ -299,9 +300,19 @@
       line-height: 1.8;
       margin-bottom: 1.75rem;
       font-weight: 300;
+      position: relative;
+      z-index: 2;
     }
 
-    .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.75rem; }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.75rem;
+      position: relative;
+      z-index: 2;
+    }
+
     .tag {
       font-family: 'DM Mono', monospace;
       font-size: 0.62rem;
@@ -321,6 +332,8 @@
       align-items: center;
       gap: 0.4rem;
       transition: gap 0.2s;
+      position: relative;
+      z-index: 2;
     }
     .project-link:hover { gap: 0.75rem; }
 
@@ -428,9 +441,18 @@
       font-style: italic;
       margin-bottom: 0.75rem;
       color: var(--text);
+      position: relative;
+      z-index: 2;
     }
 
-    .contact-box p { color: var(--muted2); margin-bottom: 2.5rem; font-size: 0.9rem; font-weight: 300; }
+    .contact-box p {
+      color: var(--muted2);
+      margin-bottom: 2.5rem;
+      font-size: 0.9rem;
+      font-weight: 300;
+      position: relative;
+      z-index: 2;
+    }
 
     .contact-email {
       font-family: 'DM Mono', monospace;
@@ -443,10 +465,11 @@
       display: inline-block;
       transition: all 0.25s;
       letter-spacing: 0.04em;
+      position: relative;
+      z-index: 2;
     }
     .contact-email:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(192,132,252,0.5); }
 
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 2rem;
@@ -455,10 +478,11 @@
       font-size: 0.68rem;
       color: var(--muted);
       letter-spacing: 0.06em;
+      position: relative;
+      z-index: 1;
     }
     footer a { color: var(--muted2); text-decoration: none; }
 
-    /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
