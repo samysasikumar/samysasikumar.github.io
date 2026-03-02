@@ -8,9 +8,9 @@ My personal Computer Science portfolio, built from scratch and deployed as my Gi
 
 ## About
 
-I'm a 9th grader at **Redmond High School (LWSD)** in Redmond, WA, working toward a Computer Science major. This portfolio showcases the real-world projects I've built, the skills I'm developing, and my 4-year academic plan — all before 10th grade.
+I'm a High School Student in Redmond, WA, working toward a Computer Science major. This portfolio showcases the real-world projects I've built, the skills I'm developing, and academic plan.
 
-Currently enrolled in **AP Computer Science Principles** and **UW Teens' Intro to Python** program.
+Currently enrolled in **AP Computer Science Principles** and **UW Youth & Teens' Intro to Python** program.
 
 ---
 
@@ -63,7 +63,7 @@ The site uses a **warm & creative** visual theme:
 
 ## Author
 
-**Samy Sasikumar** · 9th Grade · Redmond High School (LWSD) · Redmond, WA
+**Samy Sasikumar** · High School Student · Redmond, WA
 
 📫 samyuktha.sunshine@gmail.com  
 🐙 [github.com/samysasikumar](https://github.com/samysasikumar)
