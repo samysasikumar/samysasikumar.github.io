@@ -65,7 +65,6 @@ The site uses a **warm & creative** visual theme:
 
 **Samy Sasikumar** · High School Student · Redmond, WA
 
-📫 samyuktha.sunshine@gmail.com  
 🐙 [github.com/samysasikumar](https://github.com/samysasikumar)
 
 ---
