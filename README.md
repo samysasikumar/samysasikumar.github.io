@@ -10,7 +10,7 @@ My personal Computer Science portfolio, built from scratch and deployed as my Gi
 
 I'm a High School Student in Redmond, WA, working toward a Computer Science major. This portfolio showcases the real-world projects I've built, the skills I'm developing, and academic plan.
 
-Currently enrolled in **AP Computer Science Principles** and **UW Youth & Teens' Intro to Python** program.
+Currently enrolled in **AP Computer Science Principles** and **UW Youth & Teens' Coding in Python** program.
 
 ---
 
