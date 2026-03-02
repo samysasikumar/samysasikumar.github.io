@@ -231,7 +231,6 @@
     }
     .section-title em { font-style: italic; color: var(--purple); }
 
-    /* PROJECTS */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -337,7 +336,6 @@
     }
     .project-link:hover { gap: 0.75rem; }
 
-    /* SKILLS */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -376,7 +374,6 @@
     }
     .skill-item::before { content: '✦'; font-size: 0.45rem; color: var(--purple); }
 
-    /* ABOUT */
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 
     .about-text p { font-size: 0.95rem; color: var(--muted2); line-height: 1.9; margin-bottom: 1.1rem; font-weight: 300; }
@@ -412,7 +409,6 @@
       letter-spacing: 0.08em;
     }
 
-    /* CONTACT */
     .contact-box {
       background: linear-gradient(135deg, rgba(124,58,237,0.25), rgba(219,39,119,0.2));
       border: 1px solid rgba(192,132,252,0.25);
@@ -445,7 +441,7 @@
       z-index: 2;
     }
 
-    .contact-box p {
+    .contact-box > p {
       color: var(--muted2);
       margin-bottom: 2.5rem;
       font-size: 0.9rem;
@@ -454,21 +450,57 @@
       z-index: 2;
     }
 
-    .contact-email {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.82rem;
-      background: linear-gradient(135deg, var(--pink), var(--purple));
-      color: white;
-      text-decoration: none;
-      padding: 1rem 2.5rem;
-      border-radius: 100px;
-      display: inline-block;
-      transition: all 0.25s;
-      letter-spacing: 0.04em;
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 480px;
+      margin: 0 auto;
       position: relative;
       z-index: 2;
+      text-align: left;
     }
-    .contact-email:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(192,132,252,0.5); }
+
+    .contact-form input,
+    .contact-form textarea {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 12px;
+      padding: 0.85rem 1.2rem;
+      color: var(--text);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: var(--muted); }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: rgba(192,132,252,0.6); }
+
+    .contact-form textarea { resize: vertical; min-height: 120px; }
+
+    .contact-form button {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      padding: 0.9rem 2rem;
+      border-radius: 100px;
+      border: none;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      color: white;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: all 0.25s;
+      align-self: center;
+    }
+    .contact-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(192,132,252,0.4);
+    }
 
     footer {
       text-align: center;
@@ -517,12 +549,12 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-tag">9th Grade · RHS LWSD · Redmond, WA</div>
+    <div class="hero-tag">High School Student · Redmond, WA</div>
     <h1>Samy<br/><span class="name-last">Sasikumar</span></h1>
     <p class="hero-subtitle">aspiring CS major & maker of things</p>
     <p class="hero-desc">
-      Building real-world projects from web apps and game design
-      to running a real business — all before 10th grade.
+      Building real-world projects — from web apps and game design
+      to running a real business — driven by curiosity and code.
     </p>
     <div class="hero-badges">
       <span class="badge">UW Teens · Python</span>
@@ -566,7 +598,7 @@
       <div class="project-card reveal">
         <div class="project-num">02 / Game Design</div>
         <div class="project-icon">🎮</div>
-        <div class="project-title">Text-Based Game</div>
+        <div class="project-title">Text-Based Adventure Game</div>
         <p class="project-desc">
           Designed and built a text-based interactive game in Python, applying logic,
           conditionals, and game state management learned through UW Teens coursework.
@@ -627,27 +659,27 @@
     <div class="about-grid">
       <div class="about-text reveal">
         <p>
-          I'm a <strong>9th grader at Redmond High School in LWSD</strong>, Redmond WA, with a clear goal:
+          I'm a <strong>high school student in Redmond, WA</strong> with a clear goal:
           study Computer Science in college and build things that matter.
         </p>
         <p>
-          Right now I'm in <strong>AP Computer Science Principles</strong> and enrolled in
-          <strong>UW Teens' Intro to Python</strong> program — because I didn't want to wait
+          I'm currently in <strong>AP Computer Science Principles</strong> and enrolled in
+          <strong>UW Teens' Intro to Python</strong> — because I didn't want to wait
           until college to start learning seriously.
         </p>
         <p>
-          I launched a <strong>real business</strong> (Samy's Crochet 🧶), built a live website for it,
-          and designed a text-based game — all in 9th grade.
+          I launched a <strong>real business</strong> (Samy's Crochet 🧶), built a live
+          website for it, and designed a text-based adventure game in Python.
         </p>
         <p>
-          My 4-year plan includes <strong>AP CSA, AP Calculus, AP Statistics</strong>, and
+          My plan includes <strong>AP CSA, AP Calculus, AP Statistics</strong>, and
           a summer internship before senior year.
         </p>
       </div>
       <div class="stats-grid reveal">
         <div class="stat-card">
-          <div class="stat-number">9th</div>
-          <div class="stat-label">Grade · RHS LWSD</div>
+          <div class="stat-number">HS</div>
+          <div class="stat-label">Student · Redmond, WA</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">2+</div>
@@ -670,14 +702,30 @@
     <div class="contact-box reveal">
       <h3>Let's Connect</h3>
       <p>Open to collaboration, mentorship, and interesting projects.</p>
-      <a href="mailto:samyuktha.sunshine@gmail.com" class="contact-email">
-        samyuktha.sunshine@gmail.com
-      </a>
+
+      <!--
+        FORMSPREE SETUP:
+        1. Go to https://formspree.io — sign up free
+        2. Click New Form — get a URL like https://formspree.io/f/xxxxxxxx
+        3. Replace YOUR_FORM_ID below with your ID (the xxxxxxxx part)
+        Messages forward to your email privately — address never in code.
+      -->
+      <form
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+        class="contact-form"
+      >
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+        <textarea name="message" placeholder="Your message" rows="4" required></textarea>
+        <button type="submit">Send Message →</button>
+      </form>
+
     </div>
   </section>
 
   <footer>
-    <p>Built with 💜 by <a href="https://github.com/samysasikumar">Samy Sasikumar</a> · 2026 · Redmond, WA</p>
+    <p>Built with 💜 by <a href="https://github.com/samysasikumar">Samy Sasikumar</a> · Redmond, WA</p>
   </footer>
 
   <script>
