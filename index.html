@@ -265,6 +265,15 @@
     }
     .project-card:hover::before { opacity: 1; }
 
+    /* TSA competition card — teal accent */
+    .project-card.competition {
+      border-color: rgba(116,198,157,0.2);
+    }
+    .project-card.competition:hover {
+      border-color: rgba(116,198,157,0.45);
+      box-shadow: 0 20px 50px rgba(116,198,157,0.15);
+    }
+
     .project-num {
       font-family: 'DM Mono', monospace;
       font-size: 0.62rem;
@@ -277,6 +286,17 @@
       display: flex;
       align-items: center;
       gap: 0.6rem;
+    }
+
+    .tsa-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      padding: 0.2rem 0.6rem;
+      background: rgba(116,198,157,0.15);
+      border: 1px solid rgba(116,198,157,0.35);
+      border-radius: 100px;
+      color: #74c69d;
+      letter-spacing: 0.08em;
     }
 
     .project-icon {
@@ -331,6 +351,12 @@
       color: var(--peach);
     }
 
+    .tag-teal {
+      background: rgba(116,198,157,0.1);
+      border-color: rgba(116,198,157,0.2);
+      color: #74c69d;
+    }
+
     .project-links {
       display: flex;
       gap: 1.25rem;
@@ -354,6 +380,32 @@
     .project-link:hover { gap: 0.75rem; }
     .project-link.secondary { color: var(--muted2); }
     .project-link.secondary:hover { color: var(--lavender); }
+    .project-link.teal { color: #74c69d; }
+
+    /* Finding highlight box */
+    .finding-box {
+      background: rgba(116,198,157,0.07);
+      border: 1px solid rgba(116,198,157,0.2);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      margin-bottom: 1.75rem;
+      position: relative;
+      z-index: 2;
+    }
+    .finding-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      color: #74c69d;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+    .finding-text {
+      font-size: 0.82rem;
+      color: var(--muted2);
+      line-height: 1.6;
+      font-weight: 300;
+    }
 
     .skills-grid {
       display: grid;
@@ -610,6 +662,8 @@
       <span class="badge">GitHub</span>
       <span class="badge">Web Dev</span>
       <span class="badge">Game Design</span>
+      <span class="badge">Data Science</span>
+      <span class="badge">TSA</span>
       <span class="badge">CS Club</span>
       <span class="badge">Girls Who Code</span>
       <span class="badge">Coding for Medicine</span>
@@ -688,6 +742,32 @@
         </div>
       </div>
 
+      <div class="project-card competition reveal">
+        <div class="project-num">04 / Data Science <span class="tsa-badge">TSA Competition</span></div>
+        <div class="project-icon">📊</div>
+        <div class="project-title">US Domestic Travel Analysis — WA & HI</div>
+        <p class="project-desc">
+          Analyzed a public dataset of US domestic travel patterns across Washington
+          and Hawaii from 2019–2025 — capturing pre-COVID baseline, pandemic collapse,
+          and full recovery. Applied linear regression in Excel to project future
+          travel demand trends.
+        </p>
+        <div class="finding-box">
+          <div class="finding-label">Key Finding</div>
+          <div class="finding-text">Both states showed full recovery post-COVID with projected continued growth — with Hawaii and Washington recovering at notably different rates due to their distinct travel profiles.</div>
+        </div>
+        <div class="project-tags">
+          <span class="tag tag-teal">TSA · Data Science</span>
+          <span class="tag">Linear Regression</span>
+          <span class="tag">Excel</span>
+          <span class="tag">Public Dataset</span>
+          <span class="tag">2019–2025</span>
+        </div>
+        <div class="project-links">
+          <span class="project-link teal">TSA Competition Entry ✦</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -713,20 +793,21 @@
           <span class="skill-item">Git & GitHub</span>
           <span class="skill-item">GitHub Pages</span>
           <span class="skill-item">VS Code</span>
+          <span class="skill-item">Excel</span>
         </div>
       </div>
       <div class="skill-block reveal">
         <div class="skill-label">Currently Learning</div>
         <div class="skill-items">
           <span class="skill-item">AP CS Principles</span>
-          <span class="skill-item">Game Design</span>
+          <span class="skill-item">Data Science</span>
           <span class="skill-item">Web Dev</span>
         </div>
       </div>
       <div class="skill-block reveal">
-        <div class="skill-label">Clubs & Community</div>
+        <div class="skill-label">Clubs & Activities</div>
         <div class="skill-items">
-          <span class="skill-item">CS Club</span>
+          <span class="skill-item">CS Club · TSA</span>
           <span class="skill-item">Girls Who Code</span>
           <span class="skill-item">Coding for Medicine</span>
         </div>
@@ -755,6 +836,12 @@
           cycle the way it works in professional environments.
         </p>
         <p>
+          Through <strong>TSA (Technology Student Association)</strong>, I competed in
+          the Data Science project event — analyzing six years of US domestic travel
+          data across Washington and Hawaii, capturing the full COVID impact and
+          recovery, and applying linear regression to project future trends.
+        </p>
+        <p>
           I also launched a <strong>real business</strong> (Samy's Crochet 🧶), built a
           live website for it, and designed a text-based adventure game in Python.
         </p>
@@ -769,12 +856,12 @@
           <div class="stat-label">Student · Redmond, WA</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">3+</div>
+          <div class="stat-number">4+</div>
           <div class="stat-label">Projects Shipped</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">2026</div>
-          <div class="stat-label">AP CSP · AP CSA Next</div>
+          <div class="stat-number">TSA</div>
+          <div class="stat-label">Data Science · Competitor</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">CS</div>
