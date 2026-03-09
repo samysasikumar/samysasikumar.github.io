@@ -265,15 +265,6 @@
     }
     .project-card:hover::before { opacity: 1; }
 
-    /* In-progress card style */
-    .project-card.in-progress {
-      border-color: rgba(255,176,133,0.2);
-    }
-    .project-card.in-progress:hover {
-      border-color: rgba(255,176,133,0.45);
-      box-shadow: 0 20px 50px rgba(255,176,133,0.15);
-    }
-
     .project-num {
       font-family: 'DM Mono', monospace;
       font-size: 0.62rem;
@@ -286,17 +277,6 @@
       display: flex;
       align-items: center;
       gap: 0.6rem;
-    }
-
-    .wip-badge {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.55rem;
-      padding: 0.2rem 0.6rem;
-      background: rgba(255,176,133,0.15);
-      border: 1px solid rgba(255,176,133,0.35);
-      border-radius: 100px;
-      color: var(--peach);
-      letter-spacing: 0.08em;
     }
 
     .project-icon {
@@ -351,6 +331,14 @@
       color: var(--peach);
     }
 
+    .project-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+
     .project-link {
       font-family: 'DM Mono', monospace;
       font-size: 0.7rem;
@@ -364,7 +352,8 @@
       z-index: 2;
     }
     .project-link:hover { gap: 0.75rem; }
-    .project-link.muted-link { color: var(--muted); cursor: default; }
+    .project-link.secondary { color: var(--muted2); }
+    .project-link.secondary:hover { color: var(--lavender); }
 
     .skills-grid {
       display: grid;
@@ -439,7 +428,6 @@
       letter-spacing: 0.08em;
     }
 
-    /* CONTACT */
     .contact-box {
       background: linear-gradient(135deg, rgba(124,58,237,0.25), rgba(219,39,119,0.2));
       border: 1px solid rgba(192,132,252,0.25);
@@ -655,7 +643,9 @@
           <span class="tag">GitHub Pages</span>
           <span class="tag">Entrepreneurship</span>
         </div>
-        <a href="https://samysasikumar.github.io/samys-crochet-site" target="_blank" class="project-link">Live Site →</a>
+        <div class="project-links">
+          <a href="https://samysasikumar.github.io/samys-crochet-site" target="_blank" class="project-link">Live Site →</a>
+        </div>
       </div>
 
       <div class="project-card reveal">
@@ -671,11 +661,13 @@
           <span class="tag">Game Logic</span>
           <span class="tag">UW Teens</span>
         </div>
-        <a href="https://github.com/samysasikumar/python-text-game" target="_blank" class="project-link">View on GitHub →</a>
+        <div class="project-links">
+          <a href="https://github.com/samysasikumar/python-text-game" target="_blank" class="project-link">View on GitHub →</a>
+        </div>
       </div>
 
-      <div class="project-card in-progress reveal">
-        <div class="project-num">03 / Healthcare Tech <span class="wip-badge">In Progress</span></div>
+      <div class="project-card reveal">
+        <div class="project-num">03 / Healthcare Tech</div>
         <div class="project-icon">🏥</div>
         <div class="project-title">School Health Office App</div>
         <p class="project-desc">
@@ -687,10 +679,13 @@
         <div class="project-tags">
           <span class="tag tag-peach">Girls Who Code</span>
           <span class="tag tag-peach">Coding for Medicine</span>
-          <span class="tag">Team Project</span>
+          <span class="tag">HTML · CSS · JS</span>
           <span class="tag">Healthcare</span>
         </div>
-        <span class="project-link muted-link">Coming soon ✦</span>
+        <div class="project-links">
+          <a href="https://samysasikumar.github.io/nurse-health-office-app" target="_blank" class="project-link">Live Demo →</a>
+          <a href="https://github.com/samysasikumar/nurse-health-office-app" target="_blank" class="project-link secondary">GitHub ↗</a>
+        </div>
       </div>
 
     </div>
