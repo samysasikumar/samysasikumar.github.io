@@ -265,6 +265,15 @@
     }
     .project-card:hover::before { opacity: 1; }
 
+    /* In-progress card style */
+    .project-card.in-progress {
+      border-color: rgba(255,176,133,0.2);
+    }
+    .project-card.in-progress:hover {
+      border-color: rgba(255,176,133,0.45);
+      box-shadow: 0 20px 50px rgba(255,176,133,0.15);
+    }
+
     .project-num {
       font-family: 'DM Mono', monospace;
       font-size: 0.62rem;
@@ -274,6 +283,20 @@
       margin-bottom: 1.5rem;
       position: relative;
       z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .wip-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      padding: 0.2rem 0.6rem;
+      background: rgba(255,176,133,0.15);
+      border: 1px solid rgba(255,176,133,0.35);
+      border-radius: 100px;
+      color: var(--peach);
+      letter-spacing: 0.08em;
     }
 
     .project-icon {
@@ -322,6 +345,12 @@
       color: var(--lavender);
     }
 
+    .tag-peach {
+      background: rgba(255,176,133,0.1);
+      border-color: rgba(255,176,133,0.2);
+      color: var(--peach);
+    }
+
     .project-link {
       font-family: 'DM Mono', monospace;
       font-size: 0.7rem;
@@ -335,6 +364,7 @@
       z-index: 2;
     }
     .project-link:hover { gap: 0.75rem; }
+    .project-link.muted-link { color: var(--muted); cursor: default; }
 
     .skills-grid {
       display: grid;
@@ -508,7 +538,6 @@
       transform: none;
     }
 
-    /* Success message */
     .success-msg {
       display: none;
       flex-direction: column;
@@ -593,6 +622,9 @@
       <span class="badge">GitHub</span>
       <span class="badge">Web Dev</span>
       <span class="badge">Game Design</span>
+      <span class="badge">CS Club</span>
+      <span class="badge">Girls Who Code</span>
+      <span class="badge">Coding for Medicine</span>
     </div>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View Projects →</a>
@@ -642,6 +674,25 @@
         <a href="https://github.com/samysasikumar/python-text-game" target="_blank" class="project-link">View on GitHub →</a>
       </div>
 
+      <div class="project-card in-progress reveal">
+        <div class="project-num">03 / Healthcare Tech <span class="wip-badge">In Progress</span></div>
+        <div class="project-icon">🏥</div>
+        <div class="project-title">School Health Office App</div>
+        <p class="project-desc">
+          Collaborating with Girls Who Code and Coding for Medicine clubs to build a
+          real app for our school's health office. Working through a full software
+          development cycle — from requirements gathering to deployment — just like
+          in a professional environment.
+        </p>
+        <div class="project-tags">
+          <span class="tag tag-peach">Girls Who Code</span>
+          <span class="tag tag-peach">Coding for Medicine</span>
+          <span class="tag">Team Project</span>
+          <span class="tag">Healthcare</span>
+        </div>
+        <span class="project-link muted-link">Coming soon ✦</span>
+      </div>
+
     </div>
   </section>
 
@@ -677,6 +728,14 @@
           <span class="skill-item">Web Dev</span>
         </div>
       </div>
+      <div class="skill-block reveal">
+        <div class="skill-label">Clubs & Community</div>
+        <div class="skill-items">
+          <span class="skill-item">CS Club</span>
+          <span class="skill-item">Girls Who Code</span>
+          <span class="skill-item">Coding for Medicine</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -694,8 +753,15 @@
           study Computer Science in college and build things that matter.
         </p>
         <p>
-          I launched a <strong>real business</strong> (Samy's Crochet 🧶), built a live
-          website for it, and designed a text-based adventure game in Python.
+          I'm a member of my school's <strong>Computer Science Club</strong> and
+          <strong>Girls Who Code</strong>. Through a collaboration between Girls Who Code
+          and <strong>Coding for Medicine</strong>, I'm helping build a real app for
+          our school's health office — experiencing the full software development
+          cycle the way it works in professional environments.
+        </p>
+        <p>
+          I also launched a <strong>real business</strong> (Samy's Crochet 🧶), built a
+          live website for it, and designed a text-based adventure game in Python.
         </p>
         <p>
           My plan includes <strong>AP CSA, AP Calculus, AP Statistics</strong>, and
@@ -708,7 +774,7 @@
           <div class="stat-label">Student · Redmond, WA</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">2+</div>
+          <div class="stat-number">3+</div>
           <div class="stat-label">Projects Shipped</div>
         </div>
         <div class="stat-card">
@@ -729,7 +795,6 @@
       <h3>Let's Connect</h3>
       <p>Open to collaboration, mentorship, and interesting projects.</p>
 
-      <!-- Contact form — submits to Formspree, clears fields, shows success message -->
       <form id="contact-form" class="contact-form">
         <input type="text" name="name" placeholder="Your name" required />
         <input type="email" name="email" placeholder="Your email" required />
@@ -737,13 +802,11 @@
         <button type="submit" id="submit-btn">Send Message →</button>
       </form>
 
-      <!-- Shown after successful submission -->
       <div class="success-msg" id="success-msg">
         <span class="success-icon">✦</span>
         <p>Message sent! I'll get back to you soon.</p>
         <small>✦ Thank you for reaching out ✦</small>
       </div>
-
     </div>
   </section>
 
@@ -752,7 +815,6 @@
   </footer>
 
   <script>
-    // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -763,14 +825,12 @@
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
 
-    // Contact form — submit via fetch so page never redirects
     const form = document.getElementById('contact-form');
     const submitBtn = document.getElementById('submit-btn');
     const successMsg = document.getElementById('success-msg');
 
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
-
       submitBtn.textContent = 'Sending…';
       submitBtn.disabled = true;
 
