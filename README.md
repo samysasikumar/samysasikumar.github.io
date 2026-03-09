@@ -1,4 +1,4 @@
-# ✦ Samy Sasikumar — CS & DS Portfolio
+# ✦ Samyuktha Sasikumar — CS & DS Portfolio
 
 My personal Computer Science & Data Science portfolio, built from scratch and deployed as my GitHub Pages homepage.
 
