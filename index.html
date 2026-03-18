@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Samy Sasikumar | CS Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
-    :root {
+    /* ── DARK THEME (default) ── */
+    :root,
+    [data-theme="dark"] {
       --bg: #1a0f2e;
       --bg2: #221440;
       --bg3: #2d1b55;
@@ -21,6 +23,36 @@
       --purple2: #a855f7;
       --peach: #ffb085;
       --lavender: #e0c3fc;
+      --card-bg: rgba(255,255,255,0.04);
+      --nav-bg: rgba(26,15,46,0.85);
+      --blob-opacity: 0.35;
+      --input-bg: rgba(255,255,255,0.06);
+      --input-border: rgba(255,255,255,0.14);
+
+    }
+
+    /* ── LIGHT THEME ── */
+    [data-theme="light"] {
+      --bg: #faf7ff;
+      --bg2: #f0ebff;
+      --bg3: #e8e0ff;
+      --border: rgba(0,0,0,0.08);
+      --border2: rgba(0,0,0,0.12);
+      --text: #1a0f2e;
+      --muted: #6b5b8a;
+      --muted2: #4a3870;
+      --pink: #e0448a;
+      --pink2: #c4276d;
+      --purple: #7c3aed;
+      --purple2: #6d28d9;
+      --peach: #c05c20;
+      --lavender: #4a2a8a;
+      --card-bg: rgba(255,255,255,0.85);
+      --nav-bg: rgba(250,247,255,0.92);
+      --blob-opacity: 0.12;
+      --input-bg: rgba(255,255,255,0.9);
+      --input-border: rgba(0,0,0,0.15);
+
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,6 +63,7 @@
       color: var(--text);
       font-family: 'Nunito', sans-serif;
       overflow-x: hidden;
+      transition: background 0.35s ease, color 0.35s ease;
     }
 
     .blob {
@@ -39,12 +72,14 @@
       filter: blur(100px);
       pointer-events: none;
       z-index: 0;
-      opacity: 0.35;
+      opacity: var(--blob-opacity);
+      transition: opacity 0.35s ease;
     }
     .blob-1 { width: 600px; height: 600px; background: #7c3aed; top: -200px; left: -150px; }
     .blob-2 { width: 500px; height: 500px; background: #db2777; bottom: -100px; right: -100px; }
-    .blob-3 { width: 350px; height: 350px; background: #f97316; top: 40%; left: 50%; transform: translate(-50%,-50%); opacity: 0.15; }
+    .blob-3 { width: 350px; height: 350px; background: #f97316; top: 40%; left: 50%; transform: translate(-50%,-50%); opacity: calc(var(--blob-opacity) * 0.43); }
 
+    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -53,9 +88,10 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.25rem 3rem;
-      background: rgba(26, 15, 46, 0.85);
+      background: var(--nav-bg);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
+      transition: background 0.35s ease;
     }
 
     .nav-logo {
@@ -69,7 +105,7 @@
       background-clip: text;
     }
 
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
     .nav-links a {
       color: var(--muted);
       text-decoration: none;
@@ -79,6 +115,31 @@
     }
     .nav-links a:hover { color: var(--text); }
 
+    /* ── THEME TOGGLE ── */
+    .theme-toggle {
+      background: var(--card-bg);
+      border: 1px solid var(--border2);
+      border-radius: 100px;
+      padding: 0.35rem 0.75rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      transition: all 0.25s;
+      white-space: nowrap;
+    }
+    .theme-toggle:hover {
+      border-color: rgba(192,132,252,0.4);
+      color: var(--text);
+    }
+    .theme-toggle .toggle-icon { font-size: 0.85rem; transition: transform 0.3s; }
+    .theme-toggle:hover .toggle-icon { transform: rotate(20deg); }
+
+    /* ── HERO ── */
     .hero {
       position: relative;
       z-index: 1;
@@ -115,7 +176,6 @@
       animation: fadeUp 0.6s 0.1s ease both;
       color: var(--text);
     }
-
     .hero h1 .name-last {
       font-style: italic;
       background: linear-gradient(135deg, var(--pink), var(--purple));
@@ -159,15 +219,16 @@
       border: 1px solid var(--border2);
       border-radius: 100px;
       color: var(--lavender);
-      background: rgba(255,255,255,0.05);
+      background: var(--card-bg);
       letter-spacing: 0.04em;
+      transition: background 0.35s, color 0.35s, border-color 0.35s;
     }
 
-    /* UW certified badge — purple accent to match UW brand */
+    /* UW cert badge — identical to all other badges */
     .badge-uw {
-      border-color: rgba(75,0,130,0.6);
-      background: rgba(75,0,130,0.15);
-      color: #c9b3f5;
+      border-color: var(--border2);
+      background: var(--card-bg);
+      color: var(--lavender);
     }
 
     .hero-cta {
@@ -199,6 +260,7 @@
     .btn-outline { background: transparent; color: var(--lavender); border: 1px solid var(--border2); }
     .btn-outline:hover { border-color: var(--purple); background: rgba(192,132,252,0.1); transform: translateY(-2px); }
 
+    /* ── SECTIONS ── */
     section {
       position: relative;
       z-index: 1;
@@ -207,26 +269,9 @@
       padding: 5rem 3rem;
     }
 
-    .section-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .section-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--pink), var(--purple));
-    }
-
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--pink);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
+    .section-eyebrow { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+    .section-dot { width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, var(--pink), var(--purple)); }
+    .section-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--pink); letter-spacing: 0.15em; text-transform: uppercase; }
 
     .section-title {
       font-family: 'Playfair Display', serif;
@@ -238,14 +283,11 @@
     }
     .section-title em { font-style: italic; color: var(--purple); }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
-    }
+    /* ── PROJECT CARDS ── */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
 
     .project-card {
-      background: rgba(255,255,255,0.04);
+      background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 2.5rem;
@@ -253,7 +295,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .project-card::before {
       content: '';
       position: absolute;
@@ -264,21 +305,11 @@
       transition: opacity 0.3s;
       pointer-events: none;
     }
-
-    .project-card:hover {
-      border-color: rgba(192,132,252,0.35);
-      transform: translateY(-5px);
-      box-shadow: 0 20px 50px rgba(124,58,237,0.2);
-    }
+    .project-card:hover { border-color: rgba(192,132,252,0.35); transform: translateY(-5px); box-shadow: 0 20px 50px rgba(124,58,237,0.2); }
     .project-card:hover::before { opacity: 1; }
 
-    .project-card.competition {
-      border-color: rgba(116,198,157,0.2);
-    }
-    .project-card.competition:hover {
-      border-color: rgba(116,198,157,0.45);
-      box-shadow: 0 20px 50px rgba(116,198,157,0.15);
-    }
+    .project-card.competition { border-color: rgba(116,198,157,0.2); }
+    .project-card.competition:hover { border-color: rgba(116,198,157,0.45); box-shadow: 0 20px 50px rgba(116,198,157,0.15); }
 
     .project-num {
       font-family: 'DM Mono', monospace;
@@ -293,191 +324,85 @@
       align-items: center;
       gap: 0.6rem;
     }
-
     .tsa-badge {
       font-family: 'DM Mono', monospace;
       font-size: 0.55rem;
       padding: 0.2rem 0.6rem;
-      background: rgba(116,198,157,0.15);
-      border: 1px solid rgba(116,198,157,0.35);
+      background: rgba(116,198,157,0.08);
+      border: 1px solid rgba(116,198,157,0.18);
       border-radius: 100px;
       color: #74c69d;
       letter-spacing: 0.08em;
     }
-
-    .project-icon {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .project-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      color: var(--text);
-      position: relative;
-      z-index: 2;
-    }
-
-    .project-desc {
-      font-size: 0.88rem;
-      color: var(--muted2);
-      line-height: 1.8;
-      margin-bottom: 1.75rem;
-      font-weight: 300;
-      position: relative;
-      z-index: 2;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.75rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      padding: 0.3rem 0.7rem;
-      background: rgba(192,132,252,0.1);
-      border: 1px solid rgba(192,132,252,0.2);
-      border-radius: 100px;
-      color: var(--lavender);
-    }
-
-    .tag-peach {
-      background: rgba(255,176,133,0.1);
-      border-color: rgba(255,176,133,0.2);
-      color: var(--peach);
-    }
-
-    .tag-teal {
-      background: rgba(116,198,157,0.1);
-      border-color: rgba(116,198,157,0.2);
-      color: #74c69d;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 2;
-    }
-
-    .project-link {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--pink);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: gap 0.2s;
-      position: relative;
-      z-index: 2;
-    }
+    .project-icon { font-size: 2.2rem; margin-bottom: 1rem; position: relative; z-index: 2; }
+    .project-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text); position: relative; z-index: 2; }
+    .project-desc { font-size: 0.88rem; color: var(--muted2); line-height: 1.8; margin-bottom: 1.75rem; font-weight: 300; position: relative; z-index: 2; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.75rem; position: relative; z-index: 2; }
+    .tag { font-family: 'DM Mono', monospace; font-size: 0.62rem; padding: 0.3rem 0.7rem; background: rgba(192,132,252,0.1); border: 1px solid rgba(192,132,252,0.2); border-radius: 100px; color: var(--lavender); }
+    .tag-peach { background: rgba(255,176,133,0.1); border-color: rgba(255,176,133,0.2); color: var(--peach); }
+    .tag-teal { background: rgba(116,198,157,0.1); border-color: rgba(116,198,157,0.2); color: #74c69d; }
+    .project-links { display: flex; gap: 1.25rem; flex-wrap: wrap; position: relative; z-index: 2; }
+    .project-link { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--pink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.2s; position: relative; z-index: 2; }
     .project-link:hover { gap: 0.75rem; }
     .project-link.secondary { color: var(--muted2); }
     .project-link.secondary:hover { color: var(--lavender); }
     .project-link.teal { color: #74c69d; }
 
-    .finding-box {
-      background: rgba(116,198,157,0.07);
-      border: 1px solid rgba(116,198,157,0.2);
-      border-radius: 10px;
-      padding: 0.85rem 1rem;
-      margin-bottom: 1.75rem;
-      position: relative;
-      z-index: 2;
-    }
-    .finding-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      color: #74c69d;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.35rem;
-    }
-    .finding-text {
-      font-size: 0.82rem;
-      color: var(--muted2);
-      line-height: 1.6;
-      font-weight: 300;
-    }
+    .finding-box { background: rgba(116,198,157,0.07); border: 1px solid rgba(116,198,157,0.2); border-radius: 10px; padding: 0.85rem 1rem; margin-bottom: 1.75rem; position: relative; z-index: 2; }
+    .finding-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; color: #74c69d; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.35rem; }
+    .finding-text { font-size: 0.82rem; color: var(--muted2); line-height: 1.6; font-weight: 300; }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.25rem;
-    }
+    /* ── SKILLS ── */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; }
 
     .skill-block {
-      background: rgba(255,255,255,0.04);
+      background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 1.75rem;
       transition: all 0.3s;
     }
-    .skill-block:hover {
-      border-color: rgba(255,110,180,0.3);
-      background: rgba(255,110,180,0.05);
-      transform: translateY(-3px);
-    }
+    .skill-block:hover { border-color: rgba(255,110,180,0.3); background: rgba(255,110,180,0.05); transform: translateY(-3px); }
 
-    .skill-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--pink);
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-    }
-
+    .skill-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--pink); letter-spacing: 0.1em; margin-bottom: 1rem; text-transform: uppercase; }
     .skill-items { display: flex; flex-direction: column; gap: 0.55rem; }
-    .skill-item {
-      font-size: 0.88rem;
-      color: var(--muted2);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+    .skill-item { font-size: 0.88rem; color: var(--muted2); display: flex; align-items: center; gap: 0.5rem; }
     .skill-item::before { content: '✦'; font-size: 0.45rem; color: var(--purple); }
 
-    /* UW cert block special styling */
-    .skill-block.cert-block {
-      border-color: rgba(75,0,130,0.3);
-      background: rgba(75,0,130,0.08);
-    }
-    .skill-block.cert-block:hover {
-      border-color: rgba(75,0,130,0.55);
-      background: rgba(75,0,130,0.14);
-    }
-    .skill-block.cert-block .skill-label { color: #c9b3f5; }
-    .skill-block.cert-block .skill-item::before { color: #c9b3f5; }
+    /* ── CERT BLOCK — identical to other skill blocks ── */
+    .skill-block.cert-block .skill-label { color: var(--pink); }
 
     .cert-badge-img {
-      width: 48px; height: 48px;
+      width: 52px; height: 52px;
       object-fit: contain;
       margin-bottom: 0.75rem;
-      opacity: 0.9;
+      opacity: 0.92;
+      transition: transform 0.2s, opacity 0.2s;
     }
+    .cert-badge-img:hover { transform: scale(1.08); opacity: 1; }
 
+    .cert-verify-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--pink);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.75rem;
+      transition: gap 0.2s, opacity 0.2s;
+      opacity: 0.8;
+    }
+    .cert-verify-link:hover { gap: 0.6rem; opacity: 1; }
+
+    /* ── ABOUT ── */
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-
     .about-text p { font-size: 0.95rem; color: var(--muted2); line-height: 1.9; margin-bottom: 1.1rem; font-weight: 300; }
     .about-text p strong { color: var(--text); font-weight: 600; }
-
     .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
     .stat-card {
-      background: rgba(255,255,255,0.04);
+      background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 1.75rem;
@@ -485,7 +410,6 @@
       transition: all 0.3s;
     }
     .stat-card:hover { border-color: rgba(192,132,252,0.3); transform: translateY(-3px); }
-
     .stat-number {
       font-family: 'Playfair Display', serif;
       font-size: 2.2rem;
@@ -496,14 +420,9 @@
       background-clip: text;
       margin-bottom: 0.35rem;
     }
+    .stat-label { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--muted); letter-spacing: 0.08em; }
 
-    .stat-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-    }
-
+    /* ── CONTACT ── */
     .contact-box {
       background: linear-gradient(135deg, rgba(124,58,237,0.25), rgba(219,39,119,0.2));
       border: 1px solid rgba(192,132,252,0.25);
@@ -513,71 +432,37 @@
       position: relative;
       overflow: hidden;
     }
-
     .contact-box::before {
       content: '✦';
       position: absolute;
       font-size: 12rem;
       color: rgba(192,132,252,0.06);
-      top: 50%;
-      left: 50%;
+      top: 50%; left: 50%;
       transform: translate(-50%,-50%);
       pointer-events: none;
     }
+    .contact-box h3 { font-family: 'Playfair Display', serif; font-size: clamp(1.75rem,4vw,3rem); font-weight: 700; font-style: italic; margin-bottom: 0.75rem; color: var(--text); position: relative; z-index: 2; }
+    .contact-box > p { color: var(--muted2); margin-bottom: 2.5rem; font-size: 0.9rem; font-weight: 300; position: relative; z-index: 2; }
 
-    .contact-box h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.75rem, 4vw, 3rem);
-      font-weight: 700;
-      font-style: italic;
-      margin-bottom: 0.75rem;
-      color: var(--text);
-      position: relative;
-      z-index: 2;
-    }
-
-    .contact-box > p {
-      color: var(--muted2);
-      margin-bottom: 2.5rem;
-      font-size: 0.9rem;
-      font-weight: 300;
-      position: relative;
-      z-index: 2;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 480px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-      text-align: left;
-    }
-
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; max-width: 480px; margin: 0 auto; position: relative; z-index: 2; text-align: left; }
     .contact-form input,
     .contact-form textarea {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.14);
+      background: var(--input-bg);
+      border: 1px solid var(--input-border);
       border-radius: 12px;
       padding: 0.85rem 1.2rem;
       color: var(--text);
       font-family: 'Nunito', sans-serif;
       font-size: 0.9rem;
       outline: none;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, background 0.35s;
       width: 100%;
     }
-
     .contact-form input::placeholder,
     .contact-form textarea::placeholder { color: var(--muted); }
-
     .contact-form input:focus,
     .contact-form textarea:focus { border-color: rgba(192,132,252,0.6); }
-
     .contact-form textarea { resize: vertical; min-height: 120px; }
-
     .contact-form button {
       font-family: 'DM Mono', monospace;
       font-size: 0.75rem;
@@ -592,57 +477,19 @@
       transition: all 0.25s;
       align-self: center;
     }
-    .contact-form button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(192,132,252,0.4);
-    }
-    .contact-form button:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      transform: none;
-    }
+    .contact-form button:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(192,132,252,0.4); }
+    .contact-form button:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
-    .success-msg {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 2rem;
-      position: relative;
-      z-index: 2;
-    }
+    .success-msg { display: none; flex-direction: column; align-items: center; gap: 0.75rem; padding: 2rem; position: relative; z-index: 2; }
     .success-msg .success-icon { font-size: 2.5rem; }
-    .success-msg p {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.1rem;
-      color: var(--lavender);
-      margin: 0;
-    }
-    .success-msg small {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-    }
+    .success-msg p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: var(--lavender); margin: 0; }
+    .success-msg small { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.06em; }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid var(--border);
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-      position: relative;
-      z-index: 1;
-    }
+    /* ── FOOTER ── */
+    footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.06em; position: relative; z-index: 1; }
     footer a { color: var(--muted2); text-decoration: none; }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -668,6 +515,12 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li>
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">
+          <span class="toggle-icon">☀️</span>
+          <span id="theme-label">Light</span>
+        </button>
+      </li>
     </ul>
   </nav>
 
@@ -711,10 +564,7 @@
         <div class="project-num">01 / Web Development</div>
         <div class="project-icon">🧶</div>
         <div class="project-title">Samy's Crochet — Business Site</div>
-        <p class="project-desc">
-          Designed and deployed a full business website for a real handmade crochet brand.
-          Hosted on GitHub Pages as part of a real-world entrepreneurship project.
-        </p>
+        <p class="project-desc">Designed and deployed a full business website for a real handmade crochet brand. Hosted on GitHub Pages as part of a real-world entrepreneurship project.</p>
         <div class="project-tags">
           <span class="tag">HTML</span>
           <span class="tag">CSS</span>
@@ -730,11 +580,7 @@
         <div class="project-num">02 / Game Design</div>
         <div class="project-icon">🎮</div>
         <div class="project-title">Text-Based Adventure Game</div>
-        <p class="project-desc">
-          Designed and built a text-based interactive game in Python, applying logic,
-          conditionals, and game state management — certified through the UW Youth &amp; Teen
-          Coding in Python I program.
-        </p>
+        <p class="project-desc">Designed and built a text-based interactive game in Python, applying logic, conditionals, and game state management — certified through the UW Youth &amp; Teen Coding in Python I program.</p>
         <div class="project-tags">
           <span class="tag">Python</span>
           <span class="tag">Game Logic</span>
@@ -749,12 +595,7 @@
         <div class="project-num">03 / Healthcare Tech</div>
         <div class="project-icon">🏥</div>
         <div class="project-title">School Health Office App</div>
-        <p class="project-desc">
-          Collaborating with Girls Who Code and Coding for Medicine clubs to build a
-          real app for our school's health office. Working through a full software
-          development cycle — from requirements gathering to deployment — just like
-          in a professional environment.
-        </p>
+        <p class="project-desc">Collaborating with Girls Who Code and Coding for Medicine clubs to build a real app for our school's health office. Working through a full software development cycle — from requirements gathering to deployment — just like in a professional environment.</p>
         <div class="project-tags">
           <span class="tag tag-peach">Girls Who Code</span>
           <span class="tag tag-peach">Coding for Medicine</span>
@@ -771,12 +612,7 @@
         <div class="project-num">04 / Data Science <span class="tsa-badge">TSA School Competition</span></div>
         <div class="project-icon">📊</div>
         <div class="project-title">US Domestic Travel Analysis — WA & HI</div>
-        <p class="project-desc">
-          Analyzed a public dataset of US domestic travel patterns across Washington
-          and Hawaii from 2019–2025 — capturing pre-COVID baseline, pandemic collapse,
-          and full recovery. Applied linear regression in Excel to project future
-          travel demand trends.
-        </p>
+        <p class="project-desc">Analyzed a public dataset of US domestic travel patterns across Washington and Hawaii from 2019–2025 — capturing pre-COVID baseline, pandemic collapse, and full recovery. Applied linear regression in Excel to project future travel demand trends.</p>
         <div class="finding-box">
           <div class="finding-label">Key Finding</div>
           <div class="finding-text">Both states showed full recovery post-COVID with projected continued growth — with Hawaii and Washington recovering at notably different rates due to their distinct travel profiles.</div>
@@ -801,6 +637,7 @@
     </div>
     <h2 class="section-title reveal">Technical <em>Stack</em></h2>
     <div class="skills-grid">
+
       <div class="skill-block reveal">
         <div class="skill-label">Languages</div>
         <div class="skill-items">
@@ -809,6 +646,7 @@
           <span class="skill-item">JavaScript</span>
         </div>
       </div>
+
       <div class="skill-block reveal">
         <div class="skill-label">Tools</div>
         <div class="skill-items">
@@ -818,6 +656,7 @@
           <span class="skill-item">Excel</span>
         </div>
       </div>
+
       <div class="skill-block reveal">
         <div class="skill-label">Currently Learning</div>
         <div class="skill-items">
@@ -826,6 +665,7 @@
           <span class="skill-item">Web Dev</span>
         </div>
       </div>
+
       <div class="skill-block reveal">
         <div class="skill-label">Clubs & Activities</div>
         <div class="skill-items">
@@ -835,16 +675,12 @@
         </div>
       </div>
 
-      <!-- NEW — UW Certification block -->
+      <!-- CERT BLOCK — fully aligned to portfolio purple/pink scheme -->
       <div class="skill-block cert-block reveal">
         <div class="skill-label">Certification</div>
         <a href="https://api.badgr.io/public/assertions/BAv_MElxT0W212gi13-LeQ"
-           target="_blank" rel="noopener"
-           title="Verify this credential on Badgr">
-          <img src="uw-python-badge.png" alt="UW Python I Badge" class="cert-badge-img"
-               style="cursor:pointer;transition:transform 0.2s,opacity 0.2s;"
-               onmouseover="this.style.transform='scale(1.1)';this.style.opacity='1'"
-               onmouseout="this.style.transform='scale(1)';this.style.opacity='0.9'" />
+           target="_blank" rel="noopener" title="Verify on Badgr">
+          <img src="uw-python-badge.png" alt="UW Python I Badge" class="cert-badge-img" />
         </a>
         <div class="skill-items">
           <span class="skill-item">UW Youth &amp; Teen</span>
@@ -852,12 +688,7 @@
           <span class="skill-item">Issued March 2026</span>
         </div>
         <a href="https://api.badgr.io/public/assertions/BAv_MElxT0W212gi13-LeQ"
-           target="_blank" rel="noopener"
-           style="font-family:'DM Mono',monospace;font-size:0.6rem;color:#c9b3f5;
-                  text-decoration:none;display:inline-flex;align-items:center;
-                  gap:0.35rem;margin-top:0.75rem;transition:gap 0.2s;"
-           onmouseover="this.style.gap='0.6rem'"
-           onmouseout="this.style.gap='0.35rem'">
+           target="_blank" rel="noopener" class="cert-verify-link">
           Verify credential ↗
         </a>
       </div>
@@ -874,32 +705,11 @@
     <h2 class="section-title reveal">The Story <em>So Far</em></h2>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>
-          I'm a <strong>high school student in Redmond, WA</strong> with a clear goal:
-          study Computer Science & Data Science in college and build things that matter.
-        </p>
-        <p>
-          I'm a member of my school's <strong>Computer Science Club</strong> and
-          <strong>Girls Who Code</strong>. Through a collaboration between Girls Who Code
-          and <strong>Coding for Medicine</strong>, I'm helping build a real app for
-          our school's health office — experiencing the full software development
-          cycle the way it works in professional environments.
-        </p>
-        <p>
-          Through <strong>TSA (Technology Student Association)</strong>, I competed in
-          the Data Science project event — analyzing six years of US domestic travel
-          data across Washington and Hawaii, capturing the full COVID impact and
-          recovery, and applying linear regression to project future trends.
-        </p>
-        <p>
-          I also launched a <strong>real business</strong> (Samy's Crochet 🧶), built a
-          live website for it, and earned a <strong>University of Washington certification</strong>
-          in Coding in Python I — applying those skills directly in my text-based adventure game.
-        </p>
-        <p>
-          My plan includes <strong>AP CSA, AP Calculus, AP Statistics</strong>, and
-          a summer internship before senior year.
-        </p>
+        <p>I'm a <strong>high school student in Redmond, WA</strong> with a clear goal: study Computer Science & Data Science in college and build things that matter.</p>
+        <p>I'm a member of my school's <strong>Computer Science Club</strong> and <strong>Girls Who Code</strong>. Through a collaboration between Girls Who Code and <strong>Coding for Medicine</strong>, I'm helping build a real app for our school's health office — experiencing the full software development cycle the way it works in professional environments.</p>
+        <p>Through <strong>TSA (Technology Student Association)</strong>, I competed in the Data Science project event — analyzing six years of US domestic travel data across Washington and Hawaii, capturing the full COVID impact and recovery, and applying linear regression to project future trends.</p>
+        <p>I also launched a <strong>real business</strong> (Samy's Crochet 🧶), built a live website for it, and earned a <strong>University of Washington certification</strong> in Coding in Python I — applying those skills directly in my text-based adventure game.</p>
+        <p>My plan includes <strong>AP CSA, AP Calculus, AP Statistics</strong>, and a summer internship before senior year.</p>
       </div>
       <div class="stats-grid reveal">
         <div class="stat-card">
@@ -927,14 +737,12 @@
     <div class="contact-box reveal">
       <h3>Let's Connect</h3>
       <p>Open to collaboration, mentorship, and interesting projects.</p>
-
       <form id="contact-form" class="contact-form">
         <input type="text" name="name" placeholder="Your name" required />
         <input type="email" name="email" placeholder="Your email" required />
         <textarea name="message" placeholder="Your message" rows="4" required></textarea>
         <button type="submit" id="submit-btn">Send Message →</button>
       </form>
-
       <div class="success-msg" id="success-msg">
         <span class="success-icon">✦</span>
         <p>Message sent! I'll get back to you soon.</p>
@@ -948,6 +756,7 @@
   </footer>
 
   <script>
+    // ── Scroll reveal ──
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -958,22 +767,20 @@
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
 
+    // ── Contact form ──
     const form = document.getElementById('contact-form');
     const submitBtn = document.getElementById('submit-btn');
     const successMsg = document.getElementById('success-msg');
-
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
       submitBtn.textContent = 'Sending…';
       submitBtn.disabled = true;
-
       try {
         const response = await fetch('https://formspree.io/f/xreawqnb', {
           method: 'POST',
           body: new FormData(form),
           headers: { 'Accept': 'application/json' }
         });
-
         if (response.ok) {
           form.style.display = 'none';
           successMsg.style.display = 'flex';
@@ -987,6 +794,32 @@
         submitBtn.disabled = false;
       }
     });
+
+    // ── Theme toggle ──
+    const root = document.documentElement;
+    const btn  = document.getElementById('theme-btn');
+    const label = document.getElementById('theme-label');
+
+    // Restore saved preference
+    const saved = localStorage.getItem('samy-theme') || 'dark';
+    applyTheme(saved);
+
+    function applyTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      if (theme === 'light') {
+        btn.querySelector('.toggle-icon').textContent = '🌙';
+        label.textContent = 'Dark';
+      } else {
+        btn.querySelector('.toggle-icon').textContent = '☀️';
+        label.textContent = 'Light';
+      }
+      localStorage.setItem('samy-theme', theme);
+    }
+
+    function toggleTheme() {
+      const current = root.getAttribute('data-theme');
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    }
   </script>
 
 </body>
