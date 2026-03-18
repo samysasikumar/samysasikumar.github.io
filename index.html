@@ -163,6 +163,13 @@
       letter-spacing: 0.04em;
     }
 
+    /* UW certified badge — purple accent to match UW brand */
+    .badge-uw {
+      border-color: rgba(75,0,130,0.6);
+      background: rgba(75,0,130,0.15);
+      color: #c9b3f5;
+    }
+
     .hero-cta {
       display: flex;
       gap: 1rem;
@@ -265,7 +272,6 @@
     }
     .project-card:hover::before { opacity: 1; }
 
-    /* TSA competition card — teal accent */
     .project-card.competition {
       border-color: rgba(116,198,157,0.2);
     }
@@ -382,7 +388,6 @@
     .project-link.secondary:hover { color: var(--lavender); }
     .project-link.teal { color: #74c69d; }
 
-    /* Finding highlight box */
     .finding-box {
       background: rgba(116,198,157,0.07);
       border: 1px solid rgba(116,198,157,0.2);
@@ -444,6 +449,25 @@
       gap: 0.5rem;
     }
     .skill-item::before { content: '✦'; font-size: 0.45rem; color: var(--purple); }
+
+    /* UW cert block special styling */
+    .skill-block.cert-block {
+      border-color: rgba(75,0,130,0.3);
+      background: rgba(75,0,130,0.08);
+    }
+    .skill-block.cert-block:hover {
+      border-color: rgba(75,0,130,0.55);
+      background: rgba(75,0,130,0.14);
+    }
+    .skill-block.cert-block .skill-label { color: #c9b3f5; }
+    .skill-block.cert-block .skill-item::before { color: #c9b3f5; }
+
+    .cert-badge-img {
+      width: 48px; height: 48px;
+      object-fit: contain;
+      margin-bottom: 0.75rem;
+      opacity: 0.9;
+    }
 
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 
@@ -657,7 +681,7 @@
       to running a real business — driven by curiosity and code.
     </p>
     <div class="hero-badges">
-      <span class="badge">UW Teens · Python</span>
+      <span class="badge badge-uw">UW · Python I Certified</span>
       <span class="badge">AP CSP</span>
       <span class="badge">GitHub</span>
       <span class="badge">Web Dev</span>
@@ -708,12 +732,13 @@
         <div class="project-title">Text-Based Adventure Game</div>
         <p class="project-desc">
           Designed and built a text-based interactive game in Python, applying logic,
-          conditionals, and game state management learned through UW Teens coursework.
+          conditionals, and game state management — certified through the UW Youth &amp; Teen
+          Coding in Python I program.
         </p>
         <div class="project-tags">
           <span class="tag">Python</span>
           <span class="tag">Game Logic</span>
-          <span class="tag">UW Teens</span>
+          <span class="tag">UW Certified</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/samysasikumar/python-text-game" target="_blank" class="project-link">View on GitHub →</a>
@@ -763,9 +788,6 @@
           <span class="tag">Public Dataset</span>
           <span class="tag">2019–2025</span>
         </div>
-         <!-- <div class="project-links">
-          <span class="project-link teal">TSA School Competition ✦</span>
-        </div> -->
       </div>
 
     </div>
@@ -812,6 +834,34 @@
           <span class="skill-item">Coding for Medicine</span>
         </div>
       </div>
+
+      <!-- NEW — UW Certification block -->
+      <div class="skill-block cert-block reveal">
+        <div class="skill-label">Certification</div>
+        <a href="https://api.badgr.io/public/assertions/BAv_MElxT0W212gi13-LeQ"
+           target="_blank" rel="noopener"
+           title="Verify this credential on Badgr">
+          <img src="uw-python-badge.png" alt="UW Python I Badge" class="cert-badge-img"
+               style="cursor:pointer;transition:transform 0.2s,opacity 0.2s;"
+               onmouseover="this.style.transform='scale(1.1)';this.style.opacity='1'"
+               onmouseout="this.style.transform='scale(1)';this.style.opacity='0.9'" />
+        </a>
+        <div class="skill-items">
+          <span class="skill-item">UW Youth &amp; Teen</span>
+          <span class="skill-item">Coding in Python I</span>
+          <span class="skill-item">Issued March 2026</span>
+        </div>
+        <a href="https://api.badgr.io/public/assertions/BAv_MElxT0W212gi13-LeQ"
+           target="_blank" rel="noopener"
+           style="font-family:'DM Mono',monospace;font-size:0.6rem;color:#c9b3f5;
+                  text-decoration:none;display:inline-flex;align-items:center;
+                  gap:0.35rem;margin-top:0.75rem;transition:gap 0.2s;"
+           onmouseover="this.style.gap='0.6rem'"
+           onmouseout="this.style.gap='0.35rem'">
+          Verify credential ↗
+        </a>
+      </div>
+
     </div>
   </section>
 
@@ -843,7 +893,8 @@
         </p>
         <p>
           I also launched a <strong>real business</strong> (Samy's Crochet 🧶), built a
-          live website for it, and designed a text-based adventure game in Python.
+          live website for it, and earned a <strong>University of Washington certification</strong>
+          in Coding in Python I — applying those skills directly in my text-based adventure game.
         </p>
         <p>
           My plan includes <strong>AP CSA, AP Calculus, AP Statistics</strong>, and
@@ -860,8 +911,8 @@
           <div class="stat-label">Projects Shipped</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">TSA</div>
-          <div class="stat-label">Data Science · Competitor</div>
+          <div class="stat-number">UW</div>
+          <div class="stat-label">Python I · Certified</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">CS</div>
