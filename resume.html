@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samyuktha Sasikumar — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --ink2: #3a3830;
+    --ink3: #7a7670;
+    --paper: #f7f4ee;
+    --paper2: #efeae0;
+    --accent: #c85a1e;
+    --accent2: #1a6b4a;
+    --rule: #d4cfc4;
+    --mono: 'DM Mono', monospace;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 56px 48px 72px;
+  }
+
+  /* ── HEADER ── */
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 24px;
+    padding-bottom: 28px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 36px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .name-block h1 {
+    font-family: var(--serif);
+    font-size: 52px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .name-block h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .tagline {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--ink3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .contact-block {
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 300;
+    color: var(--ink2);
+    line-height: 2;
+  }
+
+  .contact-block a {
+    color: var(--accent2);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .contact-block a:hover { border-color: var(--accent2); }
+
+  /* ── GRID LAYOUT ── */
+  .body-grid {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 48px;
+    align-items: start;
+  }
+
+  /* ── SECTION ── */
+  section {
+    margin-bottom: 36px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  section:nth-child(1) { animation-delay: 0.05s; }
+  section:nth-child(2) { animation-delay: 0.1s; }
+  section:nth-child(3) { animation-delay: 0.15s; }
+  section:nth-child(4) { animation-delay: 0.2s; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ── ENTRY ── */
+  .entry {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .entry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+
+  .entry-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .entry-date {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--ink3);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .entry-sub {
+    font-size: 12px;
+    color: var(--ink3);
+    margin-bottom: 6px;
+    font-weight: 300;
+  }
+
+  .entry-desc {
+    font-size: 13px;
+    color: var(--ink2);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 8px;
+  }
+
+  .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 400;
+    padding: 2px 8px;
+    border-radius: 2px;
+    background: var(--paper2);
+    color: var(--ink2);
+    border: 1px solid var(--rule);
+  }
+
+  .tag.green {
+    background: #eaf4ee;
+    color: var(--accent2);
+    border-color: #c2dece;
+  }
+
+  .tag.orange {
+    background: #fdf0e8;
+    color: var(--accent);
+    border-color: #f0d0b8;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    animation: fadeUp 0.6s ease 0.25s both;
+  }
+
+  .sidebar section {
+    margin-bottom: 32px;
+  }
+
+  /* ── SKILL ROWS ── */
+  .skill-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+
+  .skill-row:last-child { border-bottom: none; }
+
+  .skill-name { color: var(--ink2); font-weight: 400; }
+
+  .skill-dots {
+    display: flex;
+    gap: 4px;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .dot.filled { background: var(--accent); border-color: var(--accent); }
+  .dot.half { background: linear-gradient(90deg, var(--accent) 50%, var(--rule) 50%); border-color: var(--accent); }
+
+  /* ── CERT BADGE ── */
+  .cert-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .cert-item:last-child { border-bottom: none; }
+
+  .cert-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    background: var(--paper2);
+    border: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .cert-text { flex: 1; }
+  .cert-name { font-size: 12.5px; font-weight: 500; color: var(--ink); line-height: 1.3; }
+  .cert-issuer { font-size: 11px; color: var(--ink3); font-family: var(--mono); font-weight: 300; }
+
+  /* ── ACTIVITY LIST ── */
+  .activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--ink2);
+  }
+
+  .activity-item:last-child { border-bottom: none; }
+
+  .activity-item::before {
+    content: '▸';
+    color: var(--accent);
+    font-size: 10px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  /* ── EDUCATION BLOCK ── */
+  .edu-block {
+    background: var(--paper2);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+
+  .edu-school {
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .edu-detail {
+    font-size: 12px;
+    color: var(--ink3);
+    font-family: var(--mono);
+    font-weight: 300;
+    margin-top: 3px;
+    line-height: 1.7;
+  }
+
+  /* ── BACK LINK ── */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 32px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink3);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* ── PRINT BUTTON ── */
+  .print-btn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    padding: 10px 20px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    z-index: 100;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .print-btn:hover { background: var(--accent); transform: translateY(-1px); }
+  .print-btn:active { transform: translateY(0); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; }
+    body::before { display: none; }
+    .print-btn, .back-link { display: none; }
+    .page { padding: 32px 36px; }
+    header, section, .sidebar { animation: none; }
+  }
+
+  @media (max-width: 680px) {
+    .body-grid { grid-template-columns: 1fr; }
+    header { grid-template-columns: 1fr; }
+    .contact-block { text-align: left; }
+    .page { padding: 32px 24px; }
+    .name-block h1 { font-size: 38px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- BACK LINK -->
+  <a href="index.html" class="back-link">← samysasikumar.github.io</a>
+
+  <!-- HEADER -->
+  <header>
+    <div class="name-block">
+      <h1>Samyuktha <em>Sasikumar</em></h1>
+      <p class="tagline">Aspiring CS &amp; Data Science Major &nbsp;·&nbsp; Class of 2029</p>
+    </div>
+    <div class="contact-block">
+      Redmond, WA<br>
+      <a href="https://samysasikumar.github.io" target="_blank">samysasikumar.github.io</a><br>
+      <a href="https://github.com/samysasikumar" target="_blank">github.com/samysasikumar</a>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class="body-grid">
+
+    <!-- MAIN COLUMN -->
+    <main>
+
+      <!-- EDUCATION -->
+      <section>
+        <div class="section-label">Education</div>
+        <div class="edu-block">
+          <div class="edu-school">Redmond High School — LWSD</div>
+          <div class="edu-detail">
+            Redmond, WA &nbsp;·&nbsp; Expected graduation May 2029<br>
+            9th Grade &nbsp;·&nbsp; Honors &amp; AP Track
+          </div>
+        </div>
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Coursework highlights</span>
+          </div>
+          <div class="entry-desc">
+            English 9 Honors · Algebra 2 Honors · Biology Honors · AP Computer Science Principles · World History
+          </div>
+          <div class="entry-desc" style="margin-top:4px;">
+            <em style="color:var(--ink3);font-style:normal;font-size:12px;">Planned:</em> AP CS A · Pre-Calculus Honors · Chemistry · AP Calculus AB · AP Calculus BC · AP Statistics · AP Lang &amp; Comp · Intro to Statistics · Physics
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section>
+        <div class="section-label">Projects</div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">School Health Office App</span>
+            <span class="entry-date">2025 – present</span>
+          </div>
+          <div class="entry-sub">Girls Who Code × Coding for Medicine</div>
+          <div class="entry-desc">Collaborating to build a real app for Redmond High School's health office, completing a full software development cycle from requirements gathering through deployment.</div>
+          <div class="tag-row">
+            <span class="tag orange">HTML</span>
+            <span class="tag orange">CSS</span>
+            <span class="tag orange">JavaScript</span>
+            <span class="tag green">Live Deploy</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">US Domestic Travel Analysis — WA &amp; HI</span>
+            <span class="entry-date">2025</span>
+          </div>
+          <div class="entry-sub">TSA Data Science Competition</div>
+          <div class="entry-desc">Analyzed six years of domestic travel data (2019–2025) across Washington and Hawaii, capturing pre-COVID baseline, pandemic collapse, and full recovery. Applied linear regression in Excel to project future demand trends.</div>
+          <div class="tag-row">
+            <span class="tag orange">Linear Regression</span>
+            <span class="tag orange">Excel</span>
+            <span class="tag orange">Public Dataset</span>
+            <span class="tag green">TSA Competition</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Samy's Crochet — Business Website</span>
+            <span class="entry-date">2025</span>
+          </div>
+          <div class="entry-sub">Full business site for a real handmade crochet brand</div>
+          <div class="entry-desc">Designed and deployed a complete website for an active small business, hosted on GitHub Pages as part of a real-world entrepreneurship project.</div>
+          <div class="tag-row">
+            <span class="tag orange">HTML</span>
+            <span class="tag orange">CSS</span>
+            <span class="tag orange">GitHub Pages</span>
+            <span class="tag green">Live Business</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Text-Based Adventure Game</span>
+            <span class="entry-date">2026</span>
+          </div>
+          <div class="entry-sub">UW Coding in Python I — Certified Project</div>
+          <div class="entry-desc">Designed and built an interactive text-based game in Python applying logic, conditionals, and game state management.</div>
+          <div class="tag-row">
+            <span class="tag orange">Python</span>
+            <span class="tag orange">Game Logic</span>
+            <span class="tag green">UW Certified</span>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- PLANNED PROJECTS -->
+      <section>
+        <div class="section-label">In Progress &amp; Planned</div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">US Travel Data — SQL Migration</span>
+            <span class="entry-date">Summer 2027</span>
+          </div>
+          <div class="entry-desc">Migrating the TSA dataset from Excel into a structured SQL database using CS50 SQL. First stage of a multi-summer DS pipeline project.</div>
+          <div class="tag-row"><span class="tag">SQL</span><span class="tag">CS50</span><span class="tag">Data Pipeline</span></div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Travel Demand Prediction Model</span>
+            <span class="entry-date">Summer 2028</span>
+          </div>
+          <div class="entry-desc">Python ML pipeline built on the SQL dataset — scikit-learn regression model projecting future domestic travel trends, documented with visualization dashboard.</div>
+          <div class="tag-row"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">CS50 AI</span></div>
+        </div>
+
+        <div class="entry" style="border:none;padding-bottom:0;margin-bottom:0;">
+          <div class="entry-header">
+            <span class="entry-title">AI Chatbot Capstone</span>
+            <span class="entry-date">Summer 2028</span>
+          </div>
+          <div class="entry-desc">End-to-end AI chatbot project applying concepts from CS50 AI and CodeHS Data Science with Python.</div>
+          <div class="tag-row"><span class="tag">Python</span><span class="tag">AI/ML</span><span class="tag">CS50 AI</span></div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- CERTIFICATIONS -->
+      <section>
+        <div class="section-label">Certifications</div>
+        <div class="cert-item">
+          <div class="cert-icon">🎓</div>
+          <div class="cert-text">
+            <div class="cert-name">Coding in Python I</div>
+            <div class="cert-issuer">UW Youth &amp; Teen · 2026</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon">📜</div>
+          <div class="cert-text">
+            <div class="cert-name">CS50x — Intro to CS</div>
+            <div class="cert-issuer">Harvard · Summer 2026</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon">📜</div>
+          <div class="cert-text">
+            <div class="cert-name">CS50 SQL</div>
+            <div class="cert-issuer">Harvard · Summer 2027</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon">📜</div>
+          <div class="cert-text">
+            <div class="cert-name">CS50 AI</div>
+            <div class="cert-issuer">Harvard · Summer 2028</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section>
+        <div class="section-label">Technical Skills</div>
+        <div class="skill-row">
+          <span class="skill-name">Python</span>
+          <div class="skill-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot half"></div><div class="dot"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">HTML &amp; CSS</span>
+          <div class="skill-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">JavaScript</span>
+          <div class="skill-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot half"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Git &amp; GitHub</span>
+          <div class="skill-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Excel / Data</span>
+          <div class="skill-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">SQL</span>
+          <div class="skill-dots">
+            <div class="dot filled"></div><div class="dot half"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACTIVITIES -->
+      <section>
+        <div class="section-label">Activities &amp; Clubs</div>
+        <div class="activity-item">CS Club — Redmond HS</div>
+        <div class="activity-item">Girls Who Code</div>
+        <div class="activity-item">Coding for Medicine</div>
+        <div class="activity-item">TSA — Technology Student Association</div>
+      </section>
+
+      <!-- SUMMER LEARNING -->
+      <section>
+        <div class="section-label">Summer Learning</div>
+        <div class="cert-item">
+          <div class="cert-icon">☀️</div>
+          <div class="cert-text">
+            <div class="cert-name">UW Algorithmic Thinking</div>
+            <div class="cert-issuer">UW Youth &amp; Teen · 2027</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon">☀️</div>
+          <div class="cert-text">
+            <div class="cert-name">CodeHS Data Science</div>
+            <div class="cert-issuer">CodeHS · Summer 2028</div>
+          </div>
+        </div>
+      </section>
+
+    </aside>
+
+  </div><!-- end body-grid -->
+
+  <!-- FOOTER LINE -->
+  <div style="margin-top:40px;padding-top:16px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;">
+    <span style="font-family:var(--mono);font-size:10px;color:var(--ink3);letter-spacing:0.06em;">SAMYUKTHA SASIKUMAR &nbsp;·&nbsp; REDMOND, WA &nbsp;·&nbsp; CLASS OF 2029</span>
+    <span style="font-family:var(--mono);font-size:10px;color:var(--ink3);">samysasikumar.github.io</span>
+  </div>
+
+</div><!-- end page -->
+
+<button class="print-btn" onclick="window.print()">⌘ Save as PDF</button>
+
+</body>
+</html>
