@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Samyuktha Sasikumar — Resume</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0f0e0c;
-    --ink2: #3a3830;
-    --ink3: #7a7670;
-    --paper: #f7f4ee;
-    --paper2: #efeae0;
-    --accent: #c85a1e;
-    --accent2: #1a6b4a;
-    --rule: #d4cfc4;
+    --ink: #1a0f2e;
+    --ink2: #3d2b6b;
+    --ink3: #7c6b9e;
+    --paper: #faf7ff;
+    --paper2: #f0ebff;
+    --accent: #c084fc;
+    --accent2: #7c3aed;
+    --rule: rgba(192,132,252,0.2);
     --mono: 'DM Mono', monospace;
-    --serif: 'DM Serif Display', Georgia, serif;
-    --sans: 'DM Sans', sans-serif;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Nunito', sans-serif;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,7 +38,7 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
     pointer-events: none;
     z-index: 0;
-    opacity: 0.6;
+    opacity: 0.4;
   }
 
   .page {
@@ -72,7 +72,10 @@
 
   .name-block h1 em {
     font-style: italic;
-    color: var(--accent);
+    background: linear-gradient(135deg, #c084fc, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .tagline {
@@ -94,13 +97,13 @@
   }
 
   .contact-block a {
-    color: var(--accent2);
+    color: #7c3aed;
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: border-color 0.2s;
   }
 
-  .contact-block a:hover { border-color: var(--accent2); }
+  .contact-block a:hover { border-color: #7c3aed; }
 
   /* ── GRID LAYOUT ── */
   .body-grid {
@@ -127,7 +130,7 @@
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: #7c3aed;
     margin-bottom: 14px;
     display: flex;
     align-items: center;
@@ -210,15 +213,15 @@
   }
 
   .tag.green {
-    background: #eaf4ee;
-    color: var(--accent2);
-    border-color: #c2dece;
+    background: #eef9f4;
+    color: #1a6b4a;
+    border-color: #b8e0cf;
   }
 
   .tag.orange {
-    background: #fdf0e8;
-    color: var(--accent);
-    border-color: #f0d0b8;
+    background: #f5eeff;
+    color: #7c3aed;
+    border-color: #d4b8fc;
   }
 
   /* ── SIDEBAR ── */
@@ -232,33 +235,15 @@
 
   /* ── SKILL ROWS ── */
   .skill-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 7px 0;
+    padding: 6px 0;
     border-bottom: 1px solid var(--rule);
     font-size: 13px;
+    color: var(--ink2);
   }
 
   .skill-row:last-child { border-bottom: none; }
 
-  .skill-name { color: var(--ink2); font-weight: 400; }
-
-  .skill-dots {
-    display: flex;
-    gap: 4px;
-  }
-
-  .dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--rule);
-    border: 1px solid var(--rule);
-  }
-
-  .dot.filled { background: var(--accent); border-color: var(--accent); }
-  .dot.half { background: linear-gradient(90deg, var(--accent) 50%, var(--rule) 50%); border-color: var(--accent); }
+  .skill-name { color: var(--ink2); font-weight: 400; display: block; }
 
   /* ── CERT BADGE ── */
   .cert-item {
@@ -304,7 +289,7 @@
 
   .activity-item::before {
     content: '▸';
-    color: var(--accent);
+    color: var(--accent2);
     font-size: 10px;
     margin-top: 3px;
     flex-shrink: 0;
@@ -314,7 +299,7 @@
   .edu-block {
     background: var(--paper2);
     border: 1px solid var(--rule);
-    border-radius: 4px;
+    border-radius: 8px;
     padding: 14px 16px;
     margin-bottom: 12px;
   }
@@ -347,15 +332,15 @@
     letter-spacing: 0.06em;
     transition: color 0.2s;
   }
-  .back-link:hover { color: var(--accent); }
+  .back-link:hover { color: var(--accent2); }
 
   /* ── PRINT BUTTON ── */
   .print-btn {
     position: fixed;
     bottom: 28px;
     right: 28px;
-    background: var(--ink);
-    color: var(--paper);
+    background: linear-gradient(135deg, #c084fc, #7c3aed);
+    color: white;
     border: none;
     padding: 10px 20px;
     font-family: var(--mono);
@@ -369,7 +354,7 @@
     transition: background 0.2s, transform 0.1s;
   }
 
-  .print-btn:hover { background: var(--accent); transform: translateY(-1px); }
+  .print-btn:hover { opacity: 0.9; transform: translateY(-1px); }
   .print-btn:active { transform: translateY(0); }
 
   /* ── ANIMATIONS ── */
@@ -380,7 +365,7 @@
 
   /* ── PRINT ── */
   @media print {
-    body { background: white; }
+    body { background: white; color: #0f0e0c; }
     body::before { display: none; }
     .print-btn, .back-link { display: none; }
     .page { padding: 32px 36px; }
@@ -584,42 +569,12 @@
       <!-- SKILLS -->
       <section>
         <div class="section-label">Technical Skills</div>
-        <div class="skill-row">
-          <span class="skill-name">Python</span>
-          <div class="skill-dots">
-            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot half"></div><div class="dot"></div>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">HTML &amp; CSS</span>
-          <div class="skill-dots">
-            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">JavaScript</span>
-          <div class="skill-dots">
-            <div class="dot filled"></div><div class="dot filled"></div><div class="dot half"></div><div class="dot"></div><div class="dot"></div>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">Git &amp; GitHub</span>
-          <div class="skill-dots">
-            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">Excel / Data</span>
-          <div class="skill-dots">
-            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">SQL</span>
-          <div class="skill-dots">
-            <div class="dot filled"></div><div class="dot half"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-          </div>
-        </div>
+        <div class="skill-row"><span class="skill-name">Python</span></div>
+        <div class="skill-row"><span class="skill-name">HTML &amp; CSS</span></div>
+        <div class="skill-row"><span class="skill-name">JavaScript</span></div>
+        <div class="skill-row"><span class="skill-name">Git &amp; GitHub</span></div>
+        <div class="skill-row"><span class="skill-name">Excel / Data</span></div>
+        <div class="skill-row"><span class="skill-name">SQL</span></div>
       </section>
 
       <!-- ACTIVITIES -->
