@@ -351,7 +351,7 @@
     cursor: pointer;
     border-radius: 2px;
     z-index: 100;
-    transition: background 0.2s, transform 0.1s;
+    transition: opacity 0.2s, transform 0.1s;
   }
 
   .print-btn:hover { opacity: 0.9; transform: translateY(-1px); }
@@ -434,13 +434,14 @@
       <section>
         <div class="section-label">Projects</div>
 
+        <!-- CHANGE 1: Updated to clarify individual contribution, matching portfolio site -->
         <div class="entry">
           <div class="entry-header">
             <span class="entry-title">School Health Office App</span>
             <span class="entry-date">2025 – present</span>
           </div>
           <div class="entry-sub">Girls Who Code × Coding for Medicine</div>
-          <div class="entry-desc">Collaborating to build a real app for Redmond High School's health office, completing a full software development cycle from requirements gathering through deployment.</div>
+          <div class="entry-desc">Leading the frontend development for a real app serving Redmond High School's health office, in collaboration with Girls Who Code and Coding for Medicine. Built the visit logging system, dashboard, and notification interface — working through a full software development cycle from requirements to deployment.</div>
           <div class="tag-row">
             <span class="tag orange">HTML</span>
             <span class="tag orange">CSS</span>
@@ -470,7 +471,7 @@
             <span class="entry-date">2025</span>
           </div>
           <div class="entry-sub">Full business site for a real handmade crochet brand</div>
-          <div class="entry-desc">Designed and deployed a complete website for an active small business, hosted on GitHub Pages as part of a real-world entrepreneurship project.</div>
+          <div class="entry-desc">Designed and deployed a complete website for an active small business, hosted on GitHub Pages. Includes product showcase, market event history, and a contact form — built for a real audience with real customers.</div>
           <div class="tag-row">
             <span class="tag orange">HTML</span>
             <span class="tag orange">CSS</span>
@@ -485,7 +486,7 @@
             <span class="entry-date">2026</span>
           </div>
           <div class="entry-sub">UW Coding in Python I — Certified Project</div>
-          <div class="entry-desc">Designed and built an interactive text-based game in Python applying logic, conditionals, and game state management.</div>
+          <div class="entry-desc">Designed and built an interactive text-based game in Python applying logic, conditionals, and game state management. Final project for the UW Youth &amp; Teen Coding in Python I certification.</div>
           <div class="tag-row">
             <span class="tag orange">Python</span>
             <span class="tag orange">Game Logic</span>
@@ -504,7 +505,7 @@
             <span class="entry-title">US Travel Data — SQL Migration</span>
             <span class="entry-date">Summer 2027</span>
           </div>
-          <div class="entry-desc">Migrating the TSA dataset from Excel into a structured SQL database using CS50 SQL. First stage of a multi-summer DS pipeline project.</div>
+          <div class="entry-desc">Migrating the TSA competition dataset from Excel into a structured SQL database using CS50 SQL. First stage of a multi-summer DS pipeline culminating in a predictive model.</div>
           <div class="tag-row"><span class="tag">SQL</span><span class="tag">CS50</span><span class="tag">Data Pipeline</span></div>
         </div>
 
@@ -513,17 +514,18 @@
             <span class="entry-title">Travel Demand Prediction Model</span>
             <span class="entry-date">Summer 2028</span>
           </div>
-          <div class="entry-desc">Python ML pipeline built on the SQL dataset — scikit-learn regression model projecting future domestic travel trends, documented with visualization dashboard.</div>
-          <div class="tag-row"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">CS50 AI</span></div>
+          <div class="entry-desc">Python DS notebook — linear regression and time-series forecasting on the SQL dataset, projecting domestic travel demand trends. Documented in Jupyter with exploratory analysis and visualizations.</div>
+          <div class="tag-row"><span class="tag">Python</span><span class="tag">Jupyter</span><span class="tag">CS50 AI</span><span class="tag">Google Trends API</span></div>
         </div>
 
+        <!-- CHANGE 2: Updated AI chatbot description to reflect actual plan -->
         <div class="entry" style="border:none;padding-bottom:0;margin-bottom:0;">
           <div class="entry-header">
-            <span class="entry-title">AI Chatbot Capstone</span>
+            <span class="entry-title">Samy's Crochet — AI Chatbot Upgrade</span>
             <span class="entry-date">Summer 2028</span>
           </div>
-          <div class="entry-desc">End-to-end AI chatbot project applying concepts from CS50 AI and CodeHS Data Science with Python.</div>
-          <div class="tag-row"><span class="tag">Python</span><span class="tag">AI/ML</span><span class="tag">CS50 AI</span></div>
+          <div class="entry-desc">Upgrading the existing rule-based chatbot on samys-crochet-site to a full natural language assistant using Claude or OpenAI API — applying CS50 AI concepts to a real deployed business product.</div>
+          <div class="tag-row"><span class="tag">Python</span><span class="tag">Claude API</span><span class="tag">CS50 AI</span><span class="tag">Live Business</span></div>
         </div>
 
       </section>
@@ -536,6 +538,8 @@
       <!-- CERTIFICATIONS -->
       <section>
         <div class="section-label">Certifications</div>
+
+        <!-- CHANGE 3: CS50x marked as earned (Summer 2026), not planned -->
         <div class="cert-item">
           <div class="cert-icon">🎓</div>
           <div class="cert-text">
@@ -551,17 +555,17 @@
           </div>
         </div>
         <div class="cert-item">
+          <div class="cert-icon">🎓</div>
+          <div class="cert-text">
+            <div class="cert-name">UW Algorithmic Thinking</div>
+            <div class="cert-issuer">UW Youth &amp; Teen · Summer 2027</div>
+          </div>
+        </div>
+        <div class="cert-item">
           <div class="cert-icon">📜</div>
           <div class="cert-text">
             <div class="cert-name">CS50 SQL</div>
             <div class="cert-issuer">Harvard · Summer 2027</div>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-icon">🎓</div>
-          <div class="cert-text">
-            <div class="cert-name">UW Algorithmic Thinking</div>
-            <div class="cert-issuer">UW Youth &amp; Teen · 2027</div>
           </div>
         </div>
         <div class="cert-item">
@@ -571,6 +575,7 @@
             <div class="cert-issuer">Harvard · Summer 2028</div>
           </div>
         </div>
+
       </section>
 
       <!-- SKILLS -->
@@ -599,7 +604,7 @@
         <div class="cert-item">
           <div class="cert-icon">☀️</div>
           <div class="cert-text">
-            <div class="cert-name">CodeHS Data Science</div>
+            <div class="cert-name">CodeHS Data Science with Python</div>
             <div class="cert-issuer">CodeHS · Summer 2028</div>
           </div>
         </div>
