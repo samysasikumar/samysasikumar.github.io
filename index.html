@@ -28,7 +28,6 @@
       --blob-opacity: 0.35;
       --input-bg: rgba(255,255,255,0.06);
       --input-border: rgba(255,255,255,0.14);
-
     }
 
     /* ── LIGHT THEME ── */
@@ -52,7 +51,6 @@
       --blob-opacity: 0.12;
       --input-bg: rgba(255,255,255,0.9);
       --input-border: rgba(0,0,0,0.15);
-
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -224,7 +222,6 @@
       transition: background 0.35s, color 0.35s, border-color 0.35s;
     }
 
-    /* UW cert badge — identical to all other badges */
     .badge-uw {
       border-color: var(--border2);
       background: var(--card-bg);
@@ -369,7 +366,6 @@
     .skill-item { font-size: 0.88rem; color: var(--muted2); display: flex; align-items: center; gap: 0.5rem; }
     .skill-item::before { content: '✦'; font-size: 0.45rem; color: var(--purple); }
 
-    /* ── CERT BLOCK — identical to other skill blocks ── */
     .skill-block.cert-block .skill-label { color: var(--pink); }
 
     .cert-badge-img {
@@ -593,11 +589,12 @@
         </div>
       </div>
 
+      <!-- CHANGE 2: Updated description to clarify individual contribution -->
       <div class="project-card reveal">
         <div class="project-num">03 / Healthcare Tech</div>
         <div class="project-icon">🏥</div>
         <div class="project-title">School Health Office App</div>
-        <p class="project-desc">Collaborating with Girls Who Code and Coding for Medicine clubs to build a real app for our school's health office. Working through a full software development cycle — from requirements gathering to deployment — just like in a professional environment.</p>
+        <p class="project-desc">Leading the frontend development for a real app serving Redmond High School's health office, in collaboration with Girls Who Code and Coding for Medicine. Built the visit logging system, dashboard, and notification interface — working through a full software development cycle from requirements to deployment.</p>
         <div class="project-tags">
           <span class="tag tag-peach">Girls Who Code</span>
           <span class="tag tag-peach">Coding for Medicine</span>
@@ -610,6 +607,7 @@
         </div>
       </div>
 
+      <!-- CHANGE 3: Added GitHub link for TSA analysis -->
       <div class="project-card competition reveal">
         <div class="project-num">04 / Data Science <span class="tsa-badge">TSA School Competition</span></div>
         <div class="project-icon">📊</div>
@@ -625,6 +623,9 @@
           <span class="tag">Excel</span>
           <span class="tag">Public Dataset</span>
           <span class="tag">2019–2025</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/samysasikumar/tsa-travel-analysis" target="_blank" class="project-link teal">View Analysis →</a>
         </div>
       </div>
 
@@ -677,7 +678,6 @@
         </div>
       </div>
 
-      <!-- CERT BLOCK — fully aligned to portfolio purple/pink scheme -->
       <div class="skill-block cert-block reveal">
         <div class="skill-label">Certification</div>
         <a href="https://api.badgr.io/public/assertions/BAv_MElxT0W212gi13-LeQ"
@@ -711,7 +711,8 @@
         <p>I'm a member of my school's <strong>Computer Science Club</strong> and <strong>Girls Who Code</strong>. Through a collaboration between Girls Who Code and <strong>Coding for Medicine</strong>, I'm helping build a real app for our school's health office — experiencing the full software development cycle the way it works in professional environments.</p>
         <p>Through <strong>TSA (Technology Student Association)</strong>, I competed in the Data Science project event — analyzing six years of US domestic travel data across Washington and Hawaii, capturing the full COVID impact and recovery, and applying linear regression to project future trends.</p>
         <p>I also launched a <strong>real business</strong> (Samy's Crochet 🧶), built a live website for it, and earned a <strong>University of Washington certification</strong> in Coding in Python I — applying those skills directly in my text-based adventure game.</p>
-        <p>My plan includes <strong>AP CSA, AP Calculus, AP Statistics</strong>, and a summer internship before senior year.</p>
+        <!-- CHANGE 1: Removed internship claim, replaced with accurate forward-looking plan -->
+        <p>My plan includes <strong>AP CSA, AP Calculus, and AP Statistics</strong>, with summers dedicated to CS50, data science projects, and building my technical portfolio.</p>
       </div>
       <div class="stats-grid reveal">
         <div class="stat-card">
@@ -802,7 +803,6 @@
     const btn  = document.getElementById('theme-btn');
     const label = document.getElementById('theme-label');
 
-    // Restore saved preference
     const saved = localStorage.getItem('samy-theme') || 'dark';
     applyTheme(saved);
 
