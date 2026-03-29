@@ -1,96 +1,46 @@
-# ✦ Samyuktha Sasikumar — CS & DS Portfolio
+# Hi, I'm Samy 👋
 
-My personal Computer Science & Data Science portfolio, built from scratch and deployed as my GitHub Pages homepage.
+**High school student · Redmond, WA**
+Aspiring CS & Data Science major · Building real things with code
 
-🌐 **Live site:** [samysasikumar.github.io](https://samysasikumar.github.io)
-
----
-
-## About
-
-I'm a High School Student in Redmond, WA, working toward a Computer Science & Data Science major. This portfolio showcases the real-world projects I've built, the skills I'm developing, and my academic plan.
-
-Currently enrolled in **AP Computer Science Principles** and the **UW Youth & Teen Coding in Python I** program — certified March 2026. Member of **CS Club**, **Girls Who Code**, and **Coding for Medicine**.
+[![Portfolio](https://img.shields.io/badge/Portfolio-samysasikumar.github.io-purple?style=flat-square)](https://samysasikumar.github.io)
+[![UW Python I](https://img.shields.io/badge/UW%20Certified-Python%20I%20%C2%B7%20March%202026-blue?style=flat-square)](https://api.badgr.io/public/assertions/BAv_MElxT0W212gi13-LeQ)
 
 ---
 
-## What's on the Site
+## What I'm working on
 
-| Section | Description |
-| --- | --- |
-| **Hero** | Introduction, location, tech badges, and résumé link |
-| **Projects** | 4 projects spanning web dev, game design, healthcare tech, and data science |
-| **Skills** | Languages, tools, clubs, and UW certification with verified badge |
-| **About** | My story, goals, clubs, and academic plan |
-| **Contact** | Formspree-powered contact form for collaboration and mentorship |
-| **Résumé** | Full résumé at `/resume.html` — printable as PDF |
+- 🏥 **Health office app** — building a visit log, dashboard & notification system for Redmond High School's health office (Girls Who Code × Coding for Medicine)
+- 📊 **Tourism data analysis** — regression modeling on World Bank international travel data (TSA Data Science competition)
+- 🎓 **CS50x** — completing summer 2026, Kaggle ML projects to follow
+- 🧶 **Samy's Crochet** — running a real handmade business with a live website I built myself
 
 ---
 
-## Projects Featured
+## Featured projects
 
-### 🧶 Samy's Crochet — Business Website
-A fully custom business website for my real handmade crochet brand, deployed on GitHub Pages.
-- **Tech:** HTML, CSS, GitHub Pages
-- **Live:** [samysasikumar.github.io/samys-crochet-site](https://samysasikumar.github.io/samys-crochet-site)
-- **Repo:** [github.com/samysasikumar/samys-crochet-site](https://github.com/samysasikumar/samys-crochet-site)
-
-### 🎮 Text-Based Python Adventure Game
-An interactive text-based adventure game built in Python using logic, conditionals, and game state management — certified through the UW Youth & Teen Coding in Python I program.
-- **Tech:** Python
-- **Repo:** [github.com/samysasikumar/python-text-game](https://github.com/samysasikumar/python-text-game)
-
-### 🏥 School Health Office App
-A real web app built in collaboration with Girls Who Code and Coding for Medicine for Redmond High School's health office. Leading the frontend — built the visit logging system, dashboard, and notification interface.
-- **Tech:** HTML, CSS, JavaScript, localStorage
-- **Live:** [samysasikumar.github.io/nurse-health-office-app](https://samysasikumar.github.io/nurse-health-office-app)
-- **Repo:** [github.com/samysasikumar/nurse-health-office-app](https://github.com/samysasikumar/nurse-health-office-app)
-
-### 📊 International Tourism Arrivals — India & USA
-Analyzed international tourist arrivals for India and the United States from 1995–2019 using World Bank open data. Applied linear regression in Excel to model growth trends and forecast arrivals through 2025. Submitted as a TSA Data Science school competition entry.
-- **Tech:** Excel, Linear Regression, World Bank Open Data
-- **Key Finding:** India grew from ~2M to ~18M arrivals (1995–2019). The USA projected recovery to ~200M by 2025 — two very different tourism profiles responding differently to the pandemic.
-- **Repo:** [github.com/samysasikumar/tsa-tourism-analysis](https://github.com/samysasikumar/tsa-tourism-analysis)
-- **Data source:** [World Bank ST.INT.ARVL](https://data.worldbank.org/indicator/ST.INT.ARVL)
+| Project | What it is | Stack |
+|---|---|---|
+| [nurse-health-office-app](https://github.com/samysasikumar/nurse-health-office-app) | Visit log & dashboard for school health office | JS · HTML · CSS |
+| [tsa-tourism-analysis](https://github.com/samysasikumar/tsa-tourism-analysis) | International travel demand regression, World Bank data | Excel · Linear Regression |
+| [python-text-game](https://github.com/samysasikumar/python-text-game) | Text adventure game — UW Python I certified project | Python |
+| [samys-crochet-site](https://github.com/samysasikumar/samys-crochet-site) | Business website for a real handmade crochet brand | HTML · CSS |
 
 ---
 
-## Certification
+## Stack
 
-🎓 **UW Youth & Teen — Coding in Python I** · Issued March 2026
-Verified digital badge: [badgr.io/assertions/BAv_MElxT0W212gi13-LeQ](https://api.badgr.io/public/assertions/BAv_MElxT0W212gi13-LeQ)
-
----
-
-## Built With
-
-- **HTML5** — structure and content
-- **CSS3** — custom design system, CSS variables, animations, scroll-triggered reveals, responsive layout, light/dark theme toggle
-- **JavaScript** — Intersection Observer API for scroll animations, Formspree contact form, localStorage theme persistence
-- **Google Fonts** — Playfair Display, Nunito, DM Mono
-- **GitHub Pages** — hosting
-- **Formspree** — contact form backend
+**Languages:** Python · HTML & CSS · JavaScript  
+**Tools:** Git · GitHub Pages · VS Code · Excel  
+**Learning next:** pandas · matplotlib · scikit-learn · SQL  
+**Cert:** UW Youth & Teen Coding in Python I — issued March 2026 · [verify](https://api.badgr.io/public/assertions/BAv_MElxT0W212gi13-LeQ)
 
 ---
 
-## Design
+## Clubs & activities
 
-The site uses a **dark/light themeable** visual system:
-
-- Deep purple background (`#1a0f2e`) in dark mode · soft lavender white (`#faf7ff`) in light mode
-- Pink-to-purple gradient typography and buttons
-- Playfair Display serif for headings, DM Mono for labels, Nunito for body
-- Glassmorphism card effects with hover animations and blob accents
-- Theme preference saved to `localStorage` and persists across visits
-- Mobile-friendly toggle always visible in the nav
+CS Club · TSA (Data Science event) · Girls Who Code · Coding for Medicine
 
 ---
 
-## Author
-
-**Samyuktha Sasikumar** · High School Student · Redmond, WA
-🐙 [github.com/samysasikumar](https://github.com/samysasikumar)
-
----
-
-*Built with 💜 · Aspiring CS & DS major · Class of 2029*
+*📍 Redmond, WA · Open to collaboration, mentorship & interesting projects*
