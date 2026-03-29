@@ -4,7 +4,7 @@
 Aspiring CS & Data Science major · Building real things with code
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-samysasikumar.github.io-purple?style=flat-square)](https://samysasikumar.github.io)
-[![UW Python I](https://img.shields.io/badge/UW%20Certified-Python%20I%20%C2%B7%20March%202026-blue?style=flat-square)](https://badgr.com/public/assertions/BAv_MElxT0W212gi13-LeQ)
+[![UW Python I](https://img.shields.io/badge/UW%20Certified-Python%20I%20%C2%B7%20March%202026-blue?style=flat-square)](https://samysasikumar.github.io)
 
 ---
 
@@ -33,7 +33,7 @@ Aspiring CS & Data Science major · Building real things with code
 **Languages:** Python · HTML & CSS · JavaScript  
 **Tools:** Git · GitHub Pages · VS Code · Excel  
 **Learning next:** pandas · matplotlib · scikit-learn · SQL  
-**Cert:** UW Youth & Teen Coding in Python I — issued March 2026 · [verify ↗](https://badgr.com/public/assertions/BAv_MElxT0W212gi13-LeQ)
+**Cert:** [![UW Python I Badge](https://samysasikumar.github.io/uw-python-badge.png)](https://samysasikumar.github.io/#skills) UW Youth & Teen Coding in Python I — issued March 2026
 
 ---
 
