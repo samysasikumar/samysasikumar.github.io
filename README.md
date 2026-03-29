@@ -1,14 +1,13 @@
 # Hi, I'm Samy 👋
-
-**High school student · Redmond, WA**
+**High school student · Redmond, WA**  
 Aspiring CS & Data Science major · Building real things with code
 
 ---
 
 ## What I'm working on
-
 - 🏥 **Health office app** — building a visit log, dashboard & notification system for Redmond High School's health office (Girls Who Code × Coding for Medicine)
 - 📊 **Tourism data analysis** — regression modeling on World Bank international travel data (TSA Data Science competition)
+- 🐰 **AP CSP Performance Task** — interactive text adventure game in JavaScript (Code.org App Lab) with student-developed procedures, list management, and branching story logic
 - 🎓 **CS50x** — completing summer 2026, Kaggle ML projects to follow
 - 🧶 **Samy's Crochet** — running a real handmade business with a live website I built myself
 
@@ -19,6 +18,7 @@ Aspiring CS & Data Science major · Building real things with code
 | Project | What it is | Stack |
 |---|---|---|
 | [nurse-health-office-app](https://github.com/samysasikumar/nurse-health-office-app) | Visit log & dashboard for school health office | JS · HTML · CSS |
+| [apcsp-performance-task](https://github.com/samysasikumar/apcsp-performance-task) | AP CSP Performance Task — Bunny Escape text adventure | JS · Code.org App Lab |
 | [tsa-tourism-analysis](https://github.com/samysasikumar/tsa-tourism-analysis) | International travel demand regression, World Bank data | Excel · Linear Regression |
 | [python-text-game](https://github.com/samysasikumar/python-text-game) | Text adventure game — UW Python I certified project | Python |
 | [samys-crochet-site](https://github.com/samysasikumar/samys-crochet-site) | Business website for a real handmade crochet brand | HTML · CSS |
@@ -26,7 +26,6 @@ Aspiring CS & Data Science major · Building real things with code
 ---
 
 ## Stack
-
 **Languages:** Python · HTML & CSS · JavaScript  
 **Tools:** Git · GitHub Pages · VS Code · Excel  
 **Learning next:** pandas · matplotlib · scikit-learn · SQL  
@@ -35,7 +34,6 @@ Aspiring CS & Data Science major · Building real things with code
 ---
 
 ## Clubs & activities
-
 CS Club · TSA (Data Science event) · Girls Who Code · Coding for Medicine
 
 ---
