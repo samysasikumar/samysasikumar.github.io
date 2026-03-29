@@ -3,9 +3,6 @@
 **High school student · Redmond, WA**
 Aspiring CS & Data Science major · Building real things with code
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-samysasikumar.github.io-purple?style=flat-square)](https://samysasikumar.github.io)
-[![UW Python I](https://img.shields.io/badge/UW%20Certified-Python%20I%20%C2%B7%20March%202026-blue?style=flat-square)](https://samysasikumar.github.io)
-
 ---
 
 ## What I'm working on
