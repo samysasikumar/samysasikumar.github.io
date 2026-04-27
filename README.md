@@ -1,6 +1,6 @@
 # Hi, I'm Samy 👋
 **High school student · Redmond, WA**  
-Aspiring DS & Business major · Building real things with code
+Aspiring Data Science & Business major · Building real things with code
 
 ---
 
