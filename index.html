@@ -312,14 +312,9 @@
     .cert-verify-link:hover { gap: 0.6rem; opacity: 1; }
 
     /* ── ABOUT ── */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .about-grid { display: block; }
     .about-text p { font-size: 0.95rem; color: var(--muted2); line-height: 1.9; margin-bottom: 1.1rem; font-weight: 300; }
     .about-text p strong { color: var(--text); font-weight: 600; }
-    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; text-align: center; transition: all 0.3s; }
-    .stat-card:hover { border-color: rgba(192,132,252,0.3); transform: translateY(-3px); }
-    .stat-number { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; background: linear-gradient(135deg, var(--pink), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.35rem; }
-    .stat-label { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--muted); letter-spacing: 0.08em; }
 
     /* ── CONTACT ── */
     .contact-box { background: linear-gradient(135deg, rgba(124,58,237,0.25), rgba(219,39,119,0.2)); border: 1px solid rgba(192,132,252,0.25); border-radius: 24px; padding: 4rem 3rem; text-align: center; position: relative; overflow: hidden; }
@@ -565,6 +560,7 @@
           <span class="skill-item">AP CS Principles</span>
           <span class="skill-item">Data Science</span>
           <span class="skill-item">Web Dev</span>
+          <span class="skill-item">Figma</span>
         </div>
       </div>
 
@@ -605,36 +601,13 @@
       <span class="section-label">About</span>
     </div>
     <h2 class="section-title reveal">The Story <em>So Far</em></h2>
-    <div class="about-grid">
-      <div class="about-text reveal">
+    <div class="about-text reveal" style="max-width:780px;">
         <p>I'm a <strong>high school student in Redmond, WA</strong> passionate about data, design, and code — building real things and figuring out where they'll take me.</p>
         <p>I'm a member of my school's <strong>Computer Science Club</strong> and <strong>Girls Who Code</strong> — clubs that connect my interests in technology and community impact.</p>
         <p>Through <strong>TSA (Technology Student Association)</strong>, I competed in the Data Science project event — analyzing international tourist arrivals for India and the United States using World Bank open data from 1995–2019, applying linear regression in Excel to forecast post-pandemic recovery through 2025.</p>
         <p>During middle school (2023–2025), I launched and ran <strong>Samy's Crochet 🧶</strong> — a real handmade business where I sold 100+ items, completed custom commissions, and earned $500+ per market across 3+ local markets. I also built a full website for it and earned a <strong>University of Washington certification</strong> in Coding in Python I — applying those skills directly in my text-based adventure game.</p>
-        <p>My charcoal still life was selected for display in the <strong>Redmond High School Art Show</strong> (2026). This summer I'm converting that drawing into a digital design — exploring vector illustration, color, and typography in Figma.
-
-</p>
-        <p>My plan includes <strong>AP Statistics and AP Economics</strong>, with summers dedicated to CS50, data science, and design projects — building a portfolio across code, data, and visual design.</p>
+        <p>My charcoal still life was selected for display in the <strong>Redmond High School Art Show</strong> (2026). This summer I'm converting that drawing into a digital design — exploring vector illustration, color, and typography in Figma.</p>
       </div>
-      <div class="stats-grid reveal">
-        <div class="stat-card">
-          <div class="stat-number">HS</div>
-          <div class="stat-label">Student · Redmond, WA</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">6+</div>
-          <div class="stat-label">Projects Shipped</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">UW</div>
-          <div class="stat-label">Python I · Certified</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">DS</div>
-          <div class="stat-label">Data Science &amp; Business Major</div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- CONTACT -->
