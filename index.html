@@ -6,263 +6,66 @@
   <title>Samy Sasikumar | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
-    /* ── DARK THEME (default) ── */
     :root,
     [data-theme="dark"] {
-      --bg: #1a0f2e;
-      --bg2: #221440;
-      --bg3: #2d1b55;
-      --border: rgba(255,255,255,0.08);
-      --border2: rgba(255,255,255,0.14);
-      --text: #f5eeff;
-      --muted: #a899c4;
-      --muted2: #c8b8e8;
-      --pink: #ff6eb4;
-      --pink2: #ff9dcf;
-      --purple: #c084fc;
-      --purple2: #a855f7;
-      --peach: #ffb085;
-      --lavender: #e0c3fc;
-      --card-bg: rgba(255,255,255,0.04);
-      --nav-bg: rgba(26,15,46,0.85);
-      --blob-opacity: 0.35;
-      --input-bg: rgba(255,255,255,0.06);
-      --input-border: rgba(255,255,255,0.14);
+      --bg: #1a0f2e; --bg2: #221440; --bg3: #2d1b55;
+      --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.14);
+      --text: #f5eeff; --muted: #a899c4; --muted2: #c8b8e8;
+      --pink: #ff6eb4; --pink2: #ff9dcf; --purple: #c084fc; --purple2: #a855f7;
+      --peach: #ffb085; --lavender: #e0c3fc;
+      --card-bg: rgba(255,255,255,0.04); --nav-bg: rgba(26,15,46,0.85);
+      --blob-opacity: 0.35; --input-bg: rgba(255,255,255,0.06); --input-border: rgba(255,255,255,0.14);
     }
-
-    /* ── LIGHT THEME ── */
     [data-theme="light"] {
-      --bg: #faf7ff;
-      --bg2: #f0ebff;
-      --bg3: #e8e0ff;
-      --border: rgba(0,0,0,0.08);
-      --border2: rgba(0,0,0,0.12);
-      --text: #1a0f2e;
-      --muted: #6b5b8a;
-      --muted2: #4a3870;
-      --pink: #e0448a;
-      --pink2: #c4276d;
-      --purple: #7c3aed;
-      --purple2: #6d28d9;
-      --peach: #c05c20;
-      --lavender: #4a2a8a;
-      --card-bg: rgba(255,255,255,0.85);
-      --nav-bg: rgba(250,247,255,0.92);
-      --blob-opacity: 0.12;
-      --input-bg: rgba(255,255,255,0.9);
-      --input-border: rgba(0,0,0,0.15);
+      --bg: #faf7ff; --bg2: #f0ebff; --bg3: #e8e0ff;
+      --border: rgba(0,0,0,0.08); --border2: rgba(0,0,0,0.12);
+      --text: #1a0f2e; --muted: #6b5b8a; --muted2: #4a3870;
+      --pink: #e0448a; --pink2: #c4276d; --purple: #7c3aed; --purple2: #6d28d9;
+      --peach: #c05c20; --lavender: #4a2a8a;
+      --card-bg: rgba(255,255,255,0.85); --nav-bg: rgba(250,247,255,0.92);
+      --blob-opacity: 0.12; --input-bg: rgba(255,255,255,0.9); --input-border: rgba(0,0,0,0.15);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Nunito', sans-serif; overflow-x: hidden; transition: background 0.35s ease, color 0.35s ease; }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Nunito', sans-serif;
-      overflow-x: hidden;
-      transition: background 0.35s ease, color 0.35s ease;
-    }
-
-    .blob {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(100px);
-      pointer-events: none;
-      z-index: 0;
-      opacity: var(--blob-opacity);
-      transition: opacity 0.35s ease;
-    }
+    .blob { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; opacity: var(--blob-opacity); transition: opacity 0.35s ease; }
     .blob-1 { width: 600px; height: 600px; background: #7c3aed; top: -200px; left: -150px; }
     .blob-2 { width: 500px; height: 500px; background: #db2777; bottom: -100px; right: -100px; }
     .blob-3 { width: 350px; height: 350px; background: #f97316; top: 40%; left: 50%; transform: translate(-50%,-50%); opacity: calc(var(--blob-opacity) * 0.43); }
 
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 3rem;
-      background: var(--nav-bg);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      transition: background 0.35s ease;
-    }
-
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      font-style: italic;
-      background: linear-gradient(135deg, var(--pink), var(--purple), var(--peach));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 3rem; background: var(--nav-bg); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); transition: background 0.35s ease; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; font-style: italic; background: linear-gradient(135deg, var(--pink), var(--purple), var(--peach)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover { color: var(--text); }
 
-    /* ── DESKTOP THEME TOGGLE ── */
-    .theme-toggle {
-      background: var(--card-bg);
-      border: 1px solid var(--border2);
-      border-radius: 100px;
-      padding: 0.35rem 0.75rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-      transition: all 0.25s;
-      white-space: nowrap;
-    }
+    .theme-toggle { background: var(--card-bg); border: 1px solid var(--border2); border-radius: 100px; padding: 0.35rem 0.75rem; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--muted); letter-spacing: 0.04em; transition: all 0.25s; white-space: nowrap; }
     .theme-toggle:hover { border-color: rgba(192,132,252,0.4); color: var(--text); }
     .theme-toggle .toggle-icon { font-size: 0.85rem; transition: transform 0.3s; }
     .theme-toggle:hover .toggle-icon { transform: rotate(20deg); }
 
-    /* ── MOBILE THEME TOGGLE — always visible on small screens ── */
-    .mobile-toggle {
-      display: none;
-      background: var(--card-bg);
-      border: 1px solid var(--border2);
-      border-radius: 50%;
-      width: 36px; height: 36px;
-      cursor: pointer;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      transition: all 0.25s;
-      flex-shrink: 0;
-      line-height: 1;
-    }
+    .mobile-toggle { display: none; background: var(--card-bg); border: 1px solid var(--border2); border-radius: 50%; width: 36px; height: 36px; cursor: pointer; align-items: center; justify-content: center; font-size: 1rem; transition: all 0.25s; flex-shrink: 0; line-height: 1; }
     .mobile-toggle:hover { border-color: rgba(192,132,252,0.4); transform: rotate(20deg); }
 
-    /* ── HERO ── */
-    .hero {
-      position: relative;
-      z-index: 1;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 9rem 3rem 5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .hero-tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--pink);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      animation: fadeUp 0.6s ease both;
-    }
+    .hero { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 9rem 3rem 5rem; max-width: 1100px; margin: 0 auto; }
+    .hero-tag { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--pink); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem; animation: fadeUp 0.6s ease both; }
     .hero-tag::before { content: '✦'; font-size: 0.6rem; }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 8vw, 7rem);
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-      animation: fadeUp 0.6s 0.1s ease both;
-      color: var(--text);
-    }
-    .hero h1 .name-last {
-      font-style: italic;
-      background: linear-gradient(135deg, var(--pink), var(--purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-subtitle {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1rem, 2vw, 1.4rem);
-      font-style: italic;
-      color: var(--peach);
-      margin-bottom: 2rem;
-      animation: fadeUp 0.6s 0.15s ease both;
-      opacity: 0.9;
-    }
-
-    .hero-desc {
-      font-size: 1rem;
-      color: var(--muted2);
-      max-width: 500px;
-      line-height: 1.85;
-      margin-bottom: 2.5rem;
-      animation: fadeUp 0.6s 0.2s ease both;
-      font-weight: 300;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 3rem;
-      animation: fadeUp 0.6s 0.3s ease both;
-    }
-
-    .badge {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.67rem;
-      padding: 0.4rem 0.9rem;
-      border: 1px solid var(--border2);
-      border-radius: 100px;
-      color: var(--lavender);
-      background: var(--card-bg);
-      letter-spacing: 0.04em;
-      transition: background 0.35s, color 0.35s, border-color 0.35s;
-    }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 7rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 0.5rem; animation: fadeUp 0.6s 0.1s ease both; color: var(--text); }
+    .hero h1 .name-last { font-style: italic; background: linear-gradient(135deg, var(--pink), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-subtitle { font-family: 'Playfair Display', serif; font-size: clamp(1rem, 2vw, 1.4rem); font-style: italic; color: var(--peach); margin-bottom: 2rem; animation: fadeUp 0.6s 0.15s ease both; opacity: 0.9; }
+    .hero-desc { font-size: 1rem; color: var(--muted2); max-width: 500px; line-height: 1.85; margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.2s ease both; font-weight: 300; }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 3rem; animation: fadeUp 0.6s 0.3s ease both; }
+    .badge { font-family: 'DM Mono', monospace; font-size: 0.67rem; padding: 0.4rem 0.9rem; border: 1px solid var(--border2); border-radius: 100px; color: var(--lavender); background: var(--card-bg); letter-spacing: 0.04em; transition: background 0.35s, color 0.35s, border-color 0.35s; }
     .badge-uw { border-color: var(--border2); background: var(--card-bg); color: var(--lavender); }
-
-    .hero-cta {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      animation: fadeUp 0.6s 0.4s ease both;
-    }
-
-    .btn {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
-      padding: 0.9rem 2rem;
-      border-radius: 100px;
-      text-decoration: none;
-      letter-spacing: 0.06em;
-      transition: all 0.25s;
-      cursor: pointer;
-      border: none;
-      position: relative;
-      z-index: 2;
-    }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.6s 0.4s ease both; }
+    .btn { font-family: 'DM Mono', monospace; font-size: 0.75rem; padding: 0.9rem 2rem; border-radius: 100px; text-decoration: none; letter-spacing: 0.06em; transition: all 0.25s; cursor: pointer; border: none; position: relative; z-index: 2; }
     .btn-primary { background: linear-gradient(135deg, var(--pink), var(--purple)); color: white; font-weight: 500; }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(192,132,252,0.4); }
     .btn-outline { background: transparent; color: var(--lavender); border: 1px solid var(--border2); }
     .btn-outline:hover { border-color: var(--purple); background: rgba(192,132,252,0.1); transform: translateY(-2px); }
 
-    /* ── SECTIONS ── */
     section { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 5rem 3rem; }
     .section-eyebrow { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
     .section-dot { width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, var(--pink), var(--purple)); }
@@ -270,7 +73,6 @@
     .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 700; color: var(--text); margin-bottom: 3rem; letter-spacing: -0.01em; }
     .section-title em { font-style: italic; color: var(--purple); }
 
-    /* ── PROJECT CARDS ── */
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
     .project-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; transition: all 0.3s; position: relative; overflow: hidden; }
     .project-card::before { content: ''; position: absolute; inset: 0; border-radius: 20px; background: linear-gradient(135deg, rgba(192,132,252,0.08), rgba(255,110,180,0.08)); opacity: 0; transition: opacity 0.3s; pointer-events: none; }
@@ -297,7 +99,6 @@
     .finding-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; color: #74c69d; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.35rem; }
     .finding-text { font-size: 0.82rem; color: var(--muted2); line-height: 1.6; font-weight: 300; }
 
-    /* ── SKILLS ── */
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; }
     .skill-block { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; transition: all 0.3s; }
     .skill-block:hover { border-color: rgba(255,110,180,0.3); background: rgba(255,110,180,0.05); transform: translateY(-3px); }
@@ -311,12 +112,10 @@
     .cert-verify-link { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--pink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 0.75rem; transition: gap 0.2s, opacity 0.2s; opacity: 0.8; }
     .cert-verify-link:hover { gap: 0.6rem; opacity: 1; }
 
-    /* ── ABOUT ── */
     .about-grid { display: block; }
     .about-text p { font-size: 0.95rem; color: var(--muted2); line-height: 1.9; margin-bottom: 1.1rem; font-weight: 300; }
     .about-text p strong { color: var(--text); font-weight: 600; }
 
-    /* ── CONTACT ── */
     .contact-box { background: linear-gradient(135deg, rgba(124,58,237,0.25), rgba(219,39,119,0.2)); border: 1px solid rgba(192,132,252,0.25); border-radius: 24px; padding: 4rem 3rem; text-align: center; position: relative; overflow: hidden; }
     .contact-box::before { content: '✦'; position: absolute; font-size: 12rem; color: rgba(192,132,252,0.06); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; }
     .contact-box h3 { font-family: 'Playfair Display', serif; font-size: clamp(1.75rem,4vw,3rem); font-weight: 700; font-style: italic; margin-bottom: 0.75rem; color: var(--text); position: relative; z-index: 2; }
@@ -334,7 +133,6 @@
     .success-msg p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: var(--lavender); margin: 0; }
     .success-msg small { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.06em; }
 
-    /* ── FOOTER ── */
     footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.06em; position: relative; z-index: 1; }
     footer a { color: var(--muted2); text-decoration: none; }
 
@@ -342,7 +140,6 @@
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
@@ -373,11 +170,9 @@
         </button>
       </li>
     </ul>
-    <!-- Shown only on mobile — always accessible -->
     <button class="mobile-toggle" onclick="toggleTheme()" id="mobile-theme-btn" aria-label="Toggle theme">☀️</button>
   </nav>
 
-  <!-- HERO -->
   <div class="hero">
     <div class="hero-tag">High School Student · Redmond, WA</div>
     <h1>Samyuktha<br/><span class="name-last">Sasikumar</span></h1>
@@ -404,7 +199,6 @@
     </div>
   </div>
 
-  <!-- PROJECTS -->
   <section id="projects">
     <div class="section-eyebrow reveal">
       <div class="section-dot"></div>
@@ -451,25 +245,8 @@
         </div>
       </div>
 
-      <div class="project-card reveal">
-        <div class="project-num">03 / Healthcare Tech</div>
-        <div class="project-icon">🏥</div>
-        <div class="project-title">School Health Office App</div>
-        <p class="project-desc">Leading the frontend development for a real app serving Redmond High School's health office, in collaboration with Girls Who Code and Coding for Medicine. Built the visit logging system, dashboard, and notification interface — working through a full software development cycle from requirements to deployment.</p>
-        <div class="project-tags">
-          <span class="tag tag-peach">Girls Who Code</span>
-          <span class="tag tag-peach">Coding for Medicine</span>
-          <span class="tag">HTML · CSS · JS</span>
-          <span class="tag">Healthcare</span>
-        </div>
-        <div class="project-links">
-          <a href="https://samysasikumar.github.io/nurse-health-office-app" target="_blank" class="project-link">Live Demo →</a>
-          <a href="https://github.com/samysasikumar/nurse-health-office-app" target="_blank" class="project-link secondary">GitHub ↗</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-num">04 / Game Design</div>
+<div class="project-card reveal">
+        <div class="project-num">03 / Game Design</div>
         <div class="project-icon">🎮</div>
         <div class="project-title">Text-Based Adventure Game</div>
         <p class="project-desc">Designed and built a text-based interactive game in Python, applying logic, conditionals, and game state management — certified through the UW Youth &amp; Teen Coding in Python I program.</p>
@@ -484,7 +261,7 @@
       </div>
 
       <div class="project-card reveal">
-        <div class="project-num">05 / AP CSP Performance Task</div>
+        <div class="project-num">04 / AP CSP Performance Task</div>
         <div class="project-icon">🎨</div>
         <div class="project-title">Color Palette Game</div>
         <p class="project-desc">AP Computer Science Principles Performance Task. An interactive color palette matching quiz built in JavaScript (Code.org App Lab) where players match vibes like Ocean, Sunset, and Midnight to their correct color palette. Answer choices are shuffled each round using a for loop, and score-based ending messages are generated through nested conditionals.</p>
@@ -504,28 +281,9 @@
         </div>
       </div>
 
-
-      <div class="project-card reveal">
-        <div class="project-num">06 / Productivity Tool</div>
-        <div class="project-icon">📅</div>
-        <div class="project-title">Study Planner — Personal Schedule</div>
-        <p class="project-desc">My personal weekly study planner and calendar — a clean, minimal tool I built for myself to manage my schedule. Features a customizable week and day view, color-coded subjects, repeat events, and persistent storage so my schedule is always saved. Built entirely in HTML, CSS, and vanilla JavaScript with no frameworks or dependencies.</p>
-        <div class="project-tags">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">GitHub Pages</span>
-        </div>
-        <div class="project-links">
-          <a href="https://samysasikumar.github.io/study-planner" target="_blank" class="project-link">Live Site →</a>
-          <a href="https://github.com/samysasikumar/study-planner" target="_blank" class="project-link secondary">GitHub ↗</a>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills">
     <div class="section-eyebrow reveal">
       <div class="section-dot"></div>
@@ -595,7 +353,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="section-eyebrow reveal">
       <div class="section-dot"></div>
@@ -603,17 +360,16 @@
     </div>
     <h2 class="section-title reveal">The Story <em>So Far</em></h2>
     <div class="about-text reveal" style="max-width:780px;">
-        <p>I'm a <strong>high school student in Redmond, WA</strong> passionate about data, design, and code — building real things and figuring out where they'll take me.</p>
-        <p>I'm a member of my school's <strong>Computer Science Club</strong> and <strong>Girls Who Code</strong> — clubs that connect my interests in technology and community impact.</p>
-        <p>Through <strong>TSA (Technology Student Association)</strong>, I competed in the Data Science project event — analyzing international tourist arrivals for India and the United States using World Bank open data from 1995–2019, applying linear regression in Excel to forecast post-pandemic recovery through 2025.</p>
-        <p>In elementary school I participated in <strong>JFLL and FLL</strong> (Junior First Lego League and First Lego League) — building and programming robots as part of team challenges. In middle school at Timberline, I competed in <strong>VEX IQ Robotics</strong>, finishing in the <strong>top 5</strong> at the Timberline Middle School competition.</p>
-        <p>During middle school (2023–2025), I launched and ran <strong>Samy's Crochet 🧶</strong> — a real handmade business where I sold 100+ items, completed custom commissions, and earned $500+ per market across 3+ local markets. I also built a full website for it and earned a <strong>University of Washington certification</strong> in Coding in Python I — applying those skills directly in my text-based adventure game.</p>
-        <p>My charcoal still life was selected for display in the <strong>Redmond High School Art Show</strong> (2026).</p>
-        <p>I also play on the <strong>Redmond High School Badminton Team</strong> (2026) and train as an intermediate player at the <strong>Bellevue Badminton Club</strong> in Redmond — competing both at the school and club level.</p>
-      </div>
+      <p>I'm a <strong>high school student in Redmond, WA</strong> passionate about data, design, and code — building real things and figuring out where they'll take me.</p>
+      <p>I'm a member of my school's <strong>Computer Science Club</strong> and <strong>Girls Who Code</strong> — clubs that connect my interests in technology and community impact.</p>
+      <p>Through <strong>TSA (Technology Student Association)</strong>, I competed in the Data Science project event — analyzing international tourist arrivals for India and the United States using World Bank open data from 1995–2019, applying linear regression in Excel to forecast post-pandemic recovery through 2025.</p>
+      <p>In elementary school I participated in <strong>JFLL and FLL</strong> (Junior First Lego League and First Lego League) — building and programming robots as part of team challenges. In middle school at Timberline, I competed in <strong>VEX IQ Robotics</strong>, finishing in the <strong>top 5</strong> at the Timberline Middle School competition.</p>
+      <p>During middle school (2023–2025), I launched and ran <strong>Samy's Crochet 🧶</strong> — a real handmade business where I sold 100+ items, completed custom commissions, and earned $500+ per market across 3+ local markets. I also built a full website for it and earned a <strong>University of Washington certification</strong> in Coding in Python I — applying those skills directly in my text-based adventure game.</p>
+      <p>My charcoal still life was selected for display in the <strong>Redmond High School Art Show</strong> (2026).</p>
+      <p>I also play on the <strong>Redmond High School Badminton Team</strong> (2026) and train as an intermediate player at the <strong>Bellevue Badminton Club</strong> in Redmond — competing both at the school and club level.</p>
+    </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="contact-box reveal">
       <h3>Let's Connect</h3>
@@ -637,7 +393,6 @@
   </footer>
 
   <script>
-    // ── Scroll reveal ──
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -648,7 +403,6 @@
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
 
-    // ── Contact form ──
     const form = document.getElementById('contact-form');
     const submitBtn = document.getElementById('submit-btn');
     const successMsg = document.getElementById('success-msg');
@@ -676,7 +430,6 @@
       }
     });
 
-    // ── Theme toggle — syncs desktop + mobile buttons ──
     const root  = document.documentElement;
     const btn   = document.getElementById('theme-btn');
     const mBtn  = document.getElementById('mobile-theme-btn');
